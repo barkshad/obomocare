@@ -309,7 +309,7 @@ export const Home: React.FC = () => {
               { title: 'The caregiving gap', text: 'As working-age adults migrate to cities, elderly parents are left without daily care. Without personal support, hygiene-related conditions develop, dignity erodes.' },
               { title: 'Social isolation', text: 'Many individuals OBOMOCARE serves have no regular visitor. This isolation accelerates cognitive decline, deepens depression.' },
               { title: 'Structural absence', text: 'Kenya\'s formal health system operates at facility level. Social protection programmes don\'t reach the majority of households OBOMOCARE serves.' },
-              { title: 'Compounding cycles', text: 'Food insecurity weakens immunity → illness increases → healthcare is inaccessible → treatment fails → caregiving burden grows → isolation deepens.' }
+              { title: 'Compounding cycles', text: 'Poor nutrition weakens health. Poor health increases medical needs. Limited transport prevents clinic attendance. Missed appointments worsen illness. Worsening illness increases caregiving needs. Lack of caregivers reduces quality of life. Isolation contributes to depression. Depression reduces motivation to seek help. This cycle continues unless multiple interventions are delivered together.' }
             ].map((card, i) => (
               <motion.div
                 key={i}
@@ -347,13 +347,15 @@ export const Home: React.FC = () => {
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-center mb-8">
             <div className="space-y-3">
-              {['Food insecurity', 'Mobility barriers', 'Caregiving gaps', 'Social isolation'].map((item, i) => (
+              {[
+                { title: 'Food insecurity', text: 'Malnutrition weakens immunity and worsens chronic illness' },
+                { title: 'Mobility barriers', text: 'No affordable transport → missed clinic visits → treatment failure' },
+                { title: 'Caregiving gaps', text: 'No personal care → hygiene illness, pressure sores, loss of dignity' },
+                { title: 'Social isolation', text: 'No companionship → depression, cognitive decline, withdrawal' }
+              ].map((item, i) => (
                 <div key={i} className="rounded-lg p-3 border border-slate-200 bg-white text-sm text-slate-600">
-                  <strong className="block text-slate-900 text-sm">{item}</strong>
-                  {item === 'Food insecurity' && 'Malnutrition weakens immunity and worsens chronic illness'}
-                  {item === 'Mobility barriers' && 'No affordable transport → missed clinic visits → treatment failure'}
-                  {item === 'Caregiving gaps' && 'No personal care → hygiene illness, pressure sores, loss of dignity'}
-                  {item === 'Social isolation' && 'No companionship → depression, cognitive decline, withdrawal'}
+                  <strong className="block text-slate-900 text-sm">{item.title}</strong>
+                  {item.text}
                 </div>
               ))}
             </div>
@@ -452,7 +454,10 @@ export const Home: React.FC = () => {
                 'First Aid and CPR',
                 'Waste management',
                 'Basic mental health support',
-                'Documentation and communication skills'
+                'Documentation and communication skills',
+                'Professional ethics',
+                'Confidentiality',
+                'Community engagement'
               ].map((item, i) => (
                 <div key={i} className="flex items-center gap-3 rounded-lg p-3 border border-slate-200 bg-white text-sm text-slate-600">
                   <CheckCircle size={16} style={{ color: BRAND_ORANGE }} className="flex-shrink-0" />

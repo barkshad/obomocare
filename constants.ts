@@ -34,11 +34,11 @@ export const DEFAULT_CONTENT: SiteContent = {
     programsSubtitle: "We don't choose between food or healthcare or dignity. The needs don't arrive separately — and neither do our interventions."
   },
   about: {
-    mission: "We started in 2020, during the lockdowns. Members of the Gusii community watched elderly neighbours go hungry. Watched sick people miss clinic appointments because they could not afford a boda boda. Watched people lie in soiled bedding because nobody came to help them bathe. These were not strangers. These were people with names. So we started showing up with food. With soap. With company. The word obomo in the Gusii language means the warm, sustaining care a parent gives a child. That is what we do. Five years later, we have served over two thousand families — every shilling raised from our own pockets, supermarket donations, church offerings, and Harambee. Not one dollar of international money. Now we want to scale.",
-    vision: "Every vulnerable household in Kisii and Nyamira gets dignified care — food, transport, personal support, company — because they deserve it, not because someone is being charitable.",
+    mission: "To provide integrated community support through food assistance, healthcare access, transportation facilitation, volunteer caregiving, companionship, community partnerships, and sustainable development initiatives that improve the lives of vulnerable households.",
+    vision: "A community where every vulnerable person lives with dignity, receives compassionate care, has access to essential services, and belongs to a supportive and inclusive society.",
     founderStory: "In 2020, a group of us watched the lockdowns hit our community harder than anyone in Nairobi was reporting. Elderly neighbours whose children worked in the city could not reach them. People on chronic medication could not get to the clinic. The formal systems — what formal systems? A helpline number that rang forever. A county health officer who meant well but had no budget. We were not development experts. We were neighbours. We pooled money, bought maize flour and soap, and started walking door to door. Someone said the word obomo — the nurturing warmth a mother gives her child. It stuck. It is still what drives us. Not charity. Just people taking care of their own.",
     founderImage: "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=800&h=800&fit=crop",
-    values: ["Dignity", "Compassion", "Community", "Accountability", "Integrity", "Inclusion", "Non-partisan", "Not-for-profit", "Sustainability"],
+    values: ["Dignity", "Compassion", "Community", "Integrity", "Accountability", "Inclusion", "Sustainability", "Transparency", "Respect", "Service"],
     homePreviewImage1: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=600&h=750&fit=crop",
     homePreviewImage2: "https://images.unsplash.com/photo-1593113598332-cd288d649433?w=600&h=750&fit=crop"
   },
