@@ -1,13 +1,13 @@
 import { SiteContent } from './types';
 
 export const FIREBASE_CONFIG = {
-  apiKey: "AIzaSyDF3FnrxPYa6Hj_0lIT59FP9CSCIk7aS0w",
-  authDomain: "mati-foundation-2d67e.firebaseapp.com",
-  projectId: "mati-foundation-2d67e",
-  storageBucket: "mati-foundation-2d67e.firebasestorage.app",
-  messagingSenderId: "769000463528",
-  appId: "1:769000463528:web:efbfbb32b885aa7071369d",
-  measurementId: "G-EHP18C5S41"
+  apiKey: "YOUR_FIREBASE_API_KEY",
+  authDomain: "YOUR_PROJECT.firebaseapp.com",
+  projectId: "YOUR_PROJECT_ID",
+  storageBucket: "YOUR_PROJECT.firebasestorage.app",
+  messagingSenderId: "YOUR_SENDER_ID",
+  appId: "YOUR_APP_ID",
+  measurementId: "YOUR_MEASUREMENT_ID"
 };
 
 export const CLOUDINARY_CLOUD_NAME = "dycbotqpw";
@@ -19,7 +19,7 @@ export const DEFAULT_CONTENT: SiteContent = {
   },
   hero: {
     headline: "Delivering care. Restoring dignity.",
-    subheadline: "OBOMOCARE is a registered Community Based Organisation serving vulnerable households in Kisii and Nyamira Counties — bringing food, transport, personal care, and companionship to those left behind by formal systems.",
+    subheadline: "We are a registered CBO in Kisii and Nyamira. Food. Transport. Personal care. Companionship. The things that keep people alive and human — we bring them to the households formal systems keep missing.",
     heroImage: "https://images.unsplash.com/flagged=1/photo-1544022613-e87ca75a784a?w=1920&h=1080&fit=crop"
   },
   homePage: {
@@ -34,9 +34,9 @@ export const DEFAULT_CONTENT: SiteContent = {
     programsSubtitle: "We don't choose between food or healthcare or dignity. The needs don't arrive separately — and neither do our interventions."
   },
   about: {
-    mission: "OBOMOCARE was founded in 2020 by members of the Gusii community who witnessed at close range the compounding hardships facing the most vulnerable households in Kisii and Nyamira Counties. The elderly, the chronically ill, persons living with disabilities, and households headed by orphaned children were living without food, without transport to health facilities, without personal care, and without companionship. The name comes from the Gusii word obomo — nurturing warmth, the sustaining care a parent gives a child. That word is both our name and our mission: dignified, practical, integrated support as a matter of right, not charity. For five years we have operated entirely on community-generated resources — personal contributions, supermarket donations, church networks, and Harambee fundraising. We have served over two thousand families. Now we are ready to scale.",
-    vision: "A future where every vulnerable household in Kisii and Nyamira Counties receives dignified, integrated care — food, transport, personal support, and companionship — as a matter of right, not charity. A community where no one is left behind.",
-    founderStory: "OBOMOCARE was founded in 2020 by members of the Gusii community who witnessed at close range the compounding hardships facing the most vulnerable households in Kisii and Nyamira Counties. The elderly, the chronically ill, persons living with disabilities, and households headed by orphaned children were living without food, without transport to health facilities, without personal care, and without companionship. The name comes from the Gusii word obomo — nurturing warmth, the sustaining care a parent gives a child. That word is both our name and our mission: dignified, practical, integrated support as a matter of right, not charity. For five years we have operated entirely on community-generated resources. We have served over two thousand families. Now we are ready to scale.",
+    mission: "We started in 2020, during the lockdowns. Members of the Gusii community watched elderly neighbours go hungry. Watched sick people miss clinic appointments because they could not afford a boda boda. Watched people lie in soiled bedding because nobody came to help them bathe. These were not strangers. These were people with names. So we started showing up with food. With soap. With company. The word obomo in the Gusii language means the warm, sustaining care a parent gives a child. That is what we do. Five years later, we have served over two thousand families — every shilling raised from our own pockets, supermarket donations, church offerings, and Harambee. Not one dollar of international money. Now we want to scale.",
+    vision: "Every vulnerable household in Kisii and Nyamira gets dignified care — food, transport, personal support, company — because they deserve it, not because someone is being charitable.",
+    founderStory: "In 2020, a group of us watched the lockdowns hit our community harder than anyone in Nairobi was reporting. Elderly neighbours whose children worked in the city could not reach them. People on chronic medication could not get to the clinic. The formal systems — what formal systems? A helpline number that rang forever. A county health officer who meant well but had no budget. We were not development experts. We were neighbours. We pooled money, bought maize flour and soap, and started walking door to door. Someone said the word obomo — the nurturing warmth a mother gives her child. It stuck. It is still what drives us. Not charity. Just people taking care of their own.",
     founderImage: "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=800&h=800&fit=crop",
     values: ["Dignity", "Compassion", "Community", "Accountability", "Integrity", "Inclusion", "Non-partisan", "Not-for-profit", "Sustainability"],
     homePreviewImage1: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=600&h=750&fit=crop",
@@ -44,10 +44,10 @@ export const DEFAULT_CONTENT: SiteContent = {
   },
   getInvolved: {
     introTitle: "Get Involved",
-    introText: "Whether you contribute funds, supplies, or your time as a volunteer caregiver, you are making a tangible difference in the lives of vulnerable households across Kisii and Nyamira Counties.",
-    financialText: "100% of your contribution goes directly to programme beneficiaries. We maintain strict transparency and provide quarterly financial reports to all donors and partners.",
-    suppliesText: "We are always in need of food items, sanitary supplies, clothing, and mobility aids for the households we serve.",
-    volunteerText: "Are you a trained caregiver, health worker, or community member? We welcome volunteers to join our corps of 40 trained caregivers providing home-based care."
+    introText: "Cash, supplies, or your time. Pick what fits. Everything reaches a household that needs it.",
+    financialText: "Every shilling goes to beneficiaries. Nothing is deducted for admin. We publish quarterly financial reports — any donor can see them. That is not a promise. That is how we operate.",
+    suppliesText: "We need food, sanitary towels, soap, clothing, and mobility aids. A bag of maize flour feeds a household for two weeks. A bar of soap stops a skin infection. Drop-off points in Kisii and Nyamira.",
+    volunteerText: "Are you a trained caregiver, a nurse, a community health volunteer, or someone who just wants to help? We train and deploy 40 caregivers across the two counties. You get a stipend, transport money, and a clear career path into county health roles."
   },
   contact: {
     address: "Kisii and Nyamira Counties, Gusii Region, Kenya",
@@ -67,28 +67,28 @@ export const DEFAULT_CONTENT: SiteContent = {
     {
       id: "p1",
       title: "Food Support",
-      description: "A fortnightly OBOMOCARE Food Basket delivered to enrolled households, plus meal coordination for elderly persons who cannot cook independently. Sourced through supermarket, business, and church partnerships.",
+      description: "A food basket every two weeks. Maize flour, beans, cooking oil, salt, soap. For elderly beneficiaries who cannot cook, we coordinate meals. We source through supermarkets, local businesses, and church networks.",
       image: "https://images.unsplash.com/flagged=1/photo-1544022613-e87ca75a784a?w=800&h=600&fit=crop",
       stats: "2,000+ Families Served"
     },
     {
       id: "p2",
       title: "Transport Facilitation",
-      description: "Formal partnerships with boda boda associations ensure enrolled beneficiaries reach health facilities, attend clinic appointments, and maintain medication regimens — removing the cost and physical barrier of rural transport.",
+      description: "We partner with boda boda associations in Kisii and Nyamira. Beneficiaries get subsidised rides to clinics, hospitals, and pharmacy pickups. A missed appointment means failed treatment. We make sure they get there.",
       image: "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=800&h=600&fit=crop",
       stats: "Healthcare Access"
     },
     {
       id: "p3",
       title: "Personal Care and Dignity",
-      description: "Trained volunteer caregivers provide bathing, dressing, grooming, wound care, and hygiene support at the household level. Dignity is not a luxury. It is a right. Every visit is documented to catch deterioration early.",
+      description: "Trained caregivers visit homes to help with bathing, dressing, grooming, wound care. We document every visit so we catch deterioration early. Dignity is not a luxury. It is the baseline.",
       image: "https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?w=800&h=600&fit=crop",
       stats: "40 Active Caregivers"
     },
     {
       id: "p4",
       title: "Companionship and Inclusion",
-      description: "Structured social engagement — conversation, games, storytelling, accompaniment to community events — combats isolation that accelerates cognitive decline and withdrawal. We have seen it restore people's will to live fully.",
+      description: "We sit and talk. We play games. We accompany people to community events. Isolation kills — it accelerates cognitive decline and deepens depression. We have watched people come back to life when someone shows up regularly.",
       image: "https://images.unsplash.com/photo-1511895426328-dc8714191300?w=800&h=600&fit=crop",
       stats: "Community Resilience"
     }
@@ -96,31 +96,31 @@ export const DEFAULT_CONTENT: SiteContent = {
   stories: [
     {
       id: "s1",
-      title: "From the Community, For the Community",
+      title: "Started during the lockdowns",
       author: "OBOMOCARE",
       date: "2020-06-15",
-      excerpt: "Founded by Gusii community members who witnessed compounding hardships facing vulnerable households in Kisii and Nyamira Counties. The elderly, chronically ill, persons with disabilities, and child-headed households were living without food, transport, care, or companionship.",
-      content: "OBOMOCARE was founded in 2020 by members of the Gusii community who witnessed at close range the compounding hardships facing the most vulnerable households. The name comes from the Gusii word obomo — nurturing warmth, the sustaining care a parent gives a child.",
+      excerpt: "We watched our elderly neighbours struggle while the rest of the country was focused on Covid statistics. So we pooled money and started walking.",
+      content: "In 2020, during the lockdowns, a group of us in the Gusii community noticed something nobody was reporting. Our elderly neighbours were running out of food. People on hypertension drugs could not get to the clinic because the boda boda riders had stopped operating. We pooled personal money, bought maize flour and soap, and started delivering door to door. The word obomo means nurturing warmth in our language. It is what kept us going.",
       image: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=800&h=400&fit=crop",
       category: "Success Story"
     },
     {
       id: "s2",
-      title: "Five Years of Community-Funded Impact",
+      title: "Five Years, Zero International Funding",
       author: "OBOMOCARE",
       date: "2025-01-01",
-      excerpt: "For five years we have operated entirely on community-generated resources — personal contributions, supermarket donations, church networks, and Harambee fundraising. We have served over two thousand families without a single dollar of international funding.",
-      content: "We have served over two thousand families. Our current volunteer base includes 22 active caregivers and 18 CHV partners linked. Now we are ready to scale with international partnership support.",
+      excerpt: "Not one dollar of foreign funding. Two thousand families served. Every shilling raised locally.",
+      content: "Five years, and we have never received international funding. Personal contributions. Supermarket donations. Church offerings. Harambee. We have served over two thousand families this way. We have 22 active caregivers and 18 community health volunteers linked to our network. Now we are ready to scale, but we will not compromise how we operate.",
       image: "https://images.unsplash.com/photo-1593113598332-cd288d649433?w=800&h=400&fit=crop",
       category: "Community"
     },
     {
       id: "s3",
-      title: "The Volunteer Caregiver Corps",
+      title: "Building a Caregiver Corps",
       author: "OBOMOCARE",
       date: "2025-03-01",
-      excerpt: "Forty trained community volunteers deliver home-based care across Kisii and Nyamira. Training covers personal care techniques, safeguarding, basic health literacy, first aid, and waste management — delivered in partnership with a qualified health institution.",
-      content: "Our volunteer caregivers are the heart of OBOMOCARE. Drawn from the communities they serve, trained to a professional standard, and supported to stay. Volunteers receive a monthly support stipend, transport reimbursements, peer support groups, and formal recognition.",
+      excerpt: "Forty volunteers trained to provide professional home-based care. A stipend, transport reimbursement, and a career pathway into county health.",
+      content: "Forty community volunteers now deliver home-based care across Kisii and Nyamira. They train in personal care techniques, first aid, CPR, waste management, basic mental health support, and safeguarding. It is not just volunteering — it is a career pathway. Skills gained qualify volunteers for community health assistant roles within the county government system. They get a monthly stipend, transport money, peer support, and formal recognition.",
       image: "https://images.unsplash.com/flagged=1/photo-1544022613-e87ca75a784a?w=800&h=400&fit=crop",
       category: "Education"
     }
@@ -131,7 +131,7 @@ export const DEFAULT_CONTENT: SiteContent = {
       name: "Elderly Support Programme",
       age: 0,
       dream: "Dignity in Later Life",
-      bio: "Supporting elderly persons living alone with meal delivery, personal care, companionship, and transport to health facilities. Every visit is documented to catch health deterioration early.",
+      bio: "Elderly persons living alone. We bring food, help them bathe, keep them company, and get them to the clinic. Every visit documented so we catch problems before they become emergencies.",
       image: "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=400&h=500&fit=crop",
       needsSponsorship: true
     },
@@ -140,7 +140,7 @@ export const DEFAULT_CONTENT: SiteContent = {
       name: "Household Care Programme",
       age: 0,
       dream: "Complete Household Support",
-      bio: "Fortnightly food baskets, hygiene supplies, and care visits for vulnerable households including those headed by orphaned children or persons living with disabilities.",
+      bio: "Households headed by orphaned children or persons with disabilities. Food baskets every two weeks, hygiene supplies, and regular care visits. We do not let them fall through the cracks.",
       image: "https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?w=400&h=500&fit=crop",
       needsSponsorship: true
     },
@@ -149,7 +149,7 @@ export const DEFAULT_CONTENT: SiteContent = {
       name: "Volunteer Caregiver Corps",
       age: 0,
       dream: "Professional Community Care",
-      bio: "40 trained volunteer caregivers providing bathing, dressing, grooming, wound care, and companionship at the household level. Training includes personal care techniques, first aid, and basic mental health support.",
+      bio: "40 trained caregivers. They bathe, dress, groom, treat wounds, and keep people company. Training covers personal care, first aid, and basic mental health. A stipend, transport, and a career path.",
       image: "https://images.unsplash.com/photo-1511895426328-dc8714191300?w=400&h=500&fit=crop",
       needsSponsorship: true
     }

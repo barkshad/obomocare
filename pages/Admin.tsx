@@ -35,7 +35,7 @@ export const Admin: React.FC = () => {
   const [aboutData, setAboutData] = useState(content.about);
   const [getInvolvedData, setGetInvolvedData] = useState(content.getInvolved);
   const [contactData, setContactData] = useState(content.contact);
-  const [themeData, setThemeData] = useState(content.theme || { primaryColor: '#0d9488' });
+  const [themeData, setThemeData] = useState(content.theme || { primaryColor: '#1A0FAB' });
   const [newAdminPassword, setNewAdminPassword] = useState('');
 
   // Sync state with content if it changes (e.g. initial load)
@@ -56,7 +56,7 @@ export const Admin: React.FC = () => {
       setAboutData(content.about);
       setGetInvolvedData(content.getInvolved || { introTitle: '', introText: '', financialText: '', suppliesText: '', volunteerText: '' });
       setContactData(content.contact);
-      setThemeData(content.theme || { primaryColor: '#0d9488' });
+      setThemeData(content.theme || { primaryColor: '#1A0FAB' });
     }
   }, [content]);
 
@@ -345,7 +345,7 @@ export const Admin: React.FC = () => {
                       <XAxis dataKey="name" stroke="#94a3b8" fontSize={12} tickLine={false} axisLine={false} />
                       <YAxis stroke="#94a3b8" fontSize={12} tickLine={false} axisLine={false} tickFormatter={(value) => `$${value}`} />
                       <Tooltip cursor={{fill: '#f1f5f9'}} contentStyle={{borderRadius: '8px', border: 'none', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)'}} />
-                      <Bar dataKey="amount" fill="#0d9488" radius={[4, 4, 4, 4]} barSize={32} />
+                      <Bar dataKey="amount" fill="#1A0FAB" radius={[4, 4, 4, 4]} barSize={32} />
                     </BarChart>
                   </ResponsiveContainer>
                 </div>
