@@ -38,7 +38,7 @@ export const DEFAULT_CONTENT: SiteContent = {
     vision: "A future where every vulnerable household in Kisii and Nyamira Counties receives dignified, integrated care — food, transport, personal support, and companionship — as a matter of right, not charity. A community where no one is left behind.",
     founderStory: "OBOMOCARE was founded in 2020 by members of the Gusii community who witnessed at close range the compounding hardships facing the most vulnerable households in Kisii and Nyamira Counties. The elderly, the chronically ill, persons living with disabilities, and households headed by orphaned children were living without food, without transport to health facilities, without personal care, and without companionship. The name comes from the Gusii word obomo — nurturing warmth, the sustaining care a parent gives a child. That word is both our name and our mission: dignified, practical, integrated support as a matter of right, not charity. For five years we have operated entirely on community-generated resources. We have served over two thousand families. Now we are ready to scale.",
     founderImage: "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=800&h=800&fit=crop",
-    values: ["Dignity", "Compassion", "Community", "Accountability", "Integrity", "Inclusion"],
+    values: ["Dignity", "Compassion", "Community", "Accountability", "Integrity", "Inclusion", "Non-partisan", "Not-for-profit", "Sustainability"],
     homePreviewImage1: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=600&h=750&fit=crop",
     homePreviewImage2: "https://images.unsplash.com/photo-1593113598332-cd288d649433?w=600&h=750&fit=crop"
   },

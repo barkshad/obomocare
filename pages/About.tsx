@@ -2,7 +2,7 @@ import React from 'react';
 import { useContent } from '../contexts/ContentContext';
 import { motion } from 'framer-motion';
 import * as ReactRouterDOM from 'react-router-dom';
-import { Users, Shield, Settings, BarChart3, Banknote, Gavel, X } from 'lucide-react';
+import { Users, Shield, Settings, BarChart3, Banknote, Gavel, X, ArrowRight } from 'lucide-react';
 
 const BRAND_BLUE = '#1A0FAB';
 const BRAND_ORANGE = '#E8751A';
