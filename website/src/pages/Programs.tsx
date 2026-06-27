@@ -10,6 +10,9 @@ export const Programs: React.FC = () => {
       <div className="container">
         <div className="features-head" style={{ textAlign: 'center' }}>
           <div className="features-head__tag">Our work</div>
+          <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 'var(--space-4)' }}>
+            <svg viewBox="0 0 40 40" width="40" height="40"><path d="M20 4 C14 10 12 26 20 34 C28 26 26 10 20 4 Z" fill="var(--color-accent)" /></svg>
+          </div>
           <h1 style={{ fontSize: 'var(--text-5xl)', fontWeight: 700, color: '#fff', marginBottom: 'var(--space-4)' }}>
             Four pillars. One integrated model.
           </h1>
