@@ -32,17 +32,21 @@ export const Home: React.FC = () => {
   return (
     <>
       <section className="hero">
+        <img src={content.hero.heroImage} alt="" className="hero__bg" />
+        <div className="hero__overlay"></div>
+        <div className="hero__pattern"></div>
         <div className="hero__content">
           <div className="hero__eyebrow">Gusii Region, Kenya &middot; Est. 2020</div>
           <h1>{content.hero.headline}</h1>
           <p>{content.hero.subheadline}</p>
-          <ReactRouterDOM.Link to="/get-involved" className="btn btn--accent">
-            Support our work
-          </ReactRouterDOM.Link>
-        </div>
-        <div className="hero__visual" style={{ position: 'relative', overflow: 'hidden' }}>
-          <img src={content.hero.heroImage} alt="OBOMOCARE community care" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }} />
-          <div className="hero__pattern"></div>
+          <div className="hero__actions">
+            <ReactRouterDOM.Link to="/get-involved" className="btn btn--accent btn--lg">
+              Support our work
+            </ReactRouterDOM.Link>
+            <ReactRouterDOM.Link to="/about" className="btn btn--outline btn--lg" style={{ borderColor: 'rgba(255,255,255,0.3)', color: '#fff' }}>
+              Learn more
+            </ReactRouterDOM.Link>
+          </div>
         </div>
       </section>
 
