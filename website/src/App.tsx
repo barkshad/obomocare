@@ -8,6 +8,7 @@ import { ProgramDetail } from './pages/ProgramDetail';
 import { Sponsorship } from './pages/Sponsorship';
 import { GetInvolved } from './pages/GetInvolved';
 import { Stories } from './pages/Stories';
+import { StoryDetail } from './pages/StoryDetail';
 import { Impact } from './pages/Impact';
 import { Gallery } from './pages/Gallery';
 import { Contact } from './pages/Contact';
@@ -28,6 +29,7 @@ const PublicRoutes: React.FC = () => {
         <ReactRouterDOM.Route path="/sponsorship" element={<Sponsorship />} />
         <ReactRouterDOM.Route path="/get-involved" element={<GetInvolved />} />
         <ReactRouterDOM.Route path="/stories" element={<Stories />} />
+        <ReactRouterDOM.Route path="/stories/:id" element={<StoryDetail />} />
         <ReactRouterDOM.Route path="/gallery" element={<Gallery />} />
         <ReactRouterDOM.Route path="/impact" element={<Impact />} />
         <ReactRouterDOM.Route path="/budget" element={<Budget />} />

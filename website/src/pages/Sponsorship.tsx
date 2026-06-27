@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import * as ReactRouterDOM from 'react-router-dom';
 import { useContent } from '../contexts/ContentContext';
 import { X, CheckCircle } from 'lucide-react';
 
@@ -70,9 +71,9 @@ export const Sponsorship: React.FC = () => {
                   </div>
                 ))}
               </div>
-              <a href="/get-involved" className="btn btn--accent" style={{ width: '100%', textAlign: 'center' }}>
+              <ReactRouterDOM.Link to="/get-involved" className="btn btn--accent" style={{ width: '100%', textAlign: 'center' }}>
                 Support this pillar
-              </a>
+              </ReactRouterDOM.Link>
             </div>
           </div>
         </div>

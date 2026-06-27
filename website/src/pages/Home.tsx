@@ -75,6 +75,70 @@ export const Home: React.FC = () => {
         </div>
       </section>
 
+      <section className="section" style={{ background: 'var(--surface-primary)' }}>
+        <div className="container">
+          <div className="features-head" style={{ textAlign: 'center' }}>
+            <div className="features-head__tag">Our pillars</div>
+            <h2 style={{ color: '#fff' }}>How we deliver care</h2>
+          </div>
+          <div className="grid-auto">
+            {content.programs.map((program) => (
+              <ReactRouterDOM.Link
+                key={program.id}
+                to={`/programs/${program.id}`}
+                style={{ display: 'block', padding: 'var(--space-6)', background: 'var(--surface-elevated)', borderRadius: 'var(--radius-md)', border: '1px solid rgba(255,255,255,0.08)', textDecoration: 'none', transition: 'border-color 200ms ease' }}
+                onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.borderColor = 'var(--color-accent)'; }}
+                onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.borderColor = 'rgba(255,255,255,0.08)'; }}
+              >
+                <div className="card__body" style={{ padding: 0 }}>
+                  <span style={{ display: 'inline-block', padding: 'var(--space-1) var(--space-3)', background: 'var(--color-accent)', color: '#fff', fontSize: 'var(--text-xs)', fontWeight: 600, borderRadius: 'var(--radius-pill)', marginBottom: 'var(--space-3)' }}>
+                    {program.stats}
+                  </span>
+                  <h3 className="card__title" style={{ color: '#fff' }}>{program.title}</h3>
+                  <p className="card__text" style={{ color: 'rgba(255,255,255,0.6)' }}>{program.description}</p>
+                  <span style={{ color: 'var(--color-accent)', fontSize: 'var(--text-sm)', fontWeight: 600, marginTop: 'var(--space-3)', display: 'inline-block' }}>
+                    Learn more &rarr;
+                  </span>
+                </div>
+              </ReactRouterDOM.Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section" style={{ background: 'var(--surface-light)' }}>
+        <div className="container">
+          <div className="features-head" style={{ textAlign: 'center' }}>
+            <div className="features-head__tag">Stories</div>
+            <h2>Impact stories from our community</h2>
+          </div>
+          <div className="grid-auto">
+            {content.stories.slice(0, 3).map((story) => (
+              <ReactRouterDOM.Link
+                key={story.id}
+                to={`/stories/${story.id}`}
+                className="card"
+                style={{ textDecoration: 'none' }}
+              >
+                <div className="card__body">
+                  <div className="card__tag">{story.category}</div>
+                  <h3 className="card__title">{story.title}</h3>
+                  <p className="card__text">{story.excerpt}</p>
+                  <span style={{ color: 'var(--color-accent)', fontSize: 'var(--text-sm)', fontWeight: 600, marginTop: 'var(--space-3)', display: 'inline-block' }}>
+                    Read story &rarr;
+                  </span>
+                </div>
+              </ReactRouterDOM.Link>
+            ))}
+          </div>
+          <div style={{ textAlign: 'center', marginTop: 'var(--space-8)' }}>
+            <ReactRouterDOM.Link to="/stories" className="btn btn--accent">
+              View all stories
+            </ReactRouterDOM.Link>
+          </div>
+        </div>
+      </section>
+
       <section className="cta-section">
         <div className="container">
           <h2>The people we serve are our neighbours.</h2>
