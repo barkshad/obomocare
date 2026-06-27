@@ -27,6 +27,7 @@ export const Sponsorship: React.FC = () => {
               onClick={() => setSelectedChild(child)}
               style={{ cursor: 'pointer', background: 'var(--surface-elevated)', borderRadius: 'var(--radius-md)', overflow: 'hidden', border: '1px solid rgba(255,255,255,0.06)' }}
             >
+              <img src={child.image} alt={child.name} style={{ width: '100%', height: '220px', objectFit: 'cover' }} />
               <div style={{ padding: 'var(--space-6)' }}>
                 <div style={{ display: 'inline-block', padding: 'var(--space-1) var(--space-3)', background: 'var(--color-accent)', color: '#fff', fontSize: 'var(--text-xs)', fontWeight: 600, borderRadius: 'var(--radius-pill)', marginBottom: 'var(--space-3)' }}>
                   {child.dream}
@@ -57,6 +58,9 @@ export const Sponsorship: React.FC = () => {
             >
               <X size={20} />
             </button>
+            {selectedChild.image && (
+              <img src={selectedChild.image} alt={selectedChild.name} style={{ width: '100%', height: '280px', objectFit: 'cover' }} />
+            )}
             <div style={{ padding: 'var(--space-8)' }}>
               <span style={{ display: 'inline-block', padding: 'var(--space-1) var(--space-3)', background: 'var(--color-accent)', color: '#fff', fontSize: 'var(--text-xs)', fontWeight: 600, borderRadius: 'var(--radius-pill)', marginBottom: 'var(--space-4)' }}>
                 {selectedChild.dream}

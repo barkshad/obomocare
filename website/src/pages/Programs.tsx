@@ -27,7 +27,8 @@ export const Programs: React.FC = () => {
               onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.borderColor = 'var(--color-accent)'; }}
               onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.borderColor = 'rgba(255,255,255,0.08)'; }}
             >
-              <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: 'var(--space-6)' }}>
+              <img src={program.image} alt={program.title} style={{ width: '100%', height: '240px', objectFit: 'cover', borderRadius: 'var(--radius-md) var(--radius-md) 0 0' }} />
+              <div style={{ padding: 'var(--space-6)', display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: 'var(--space-6)' }}>
                 <div>
                   <h2 style={{ fontSize: 'var(--text-2xl)', fontWeight: 600, color: '#fff', marginBottom: 'var(--space-3)' }}>{program.title}</h2>
                   <p style={{ fontSize: 'var(--text-sm)', color: 'rgba(255,255,255,0.6)', lineHeight: 1.7, maxWidth: '48ch' }}>{program.description}</p>

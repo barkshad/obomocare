@@ -40,7 +40,8 @@ export const Home: React.FC = () => {
             Support our work
           </ReactRouterDOM.Link>
         </div>
-        <div className="hero__visual">
+        <div className="hero__visual" style={{ position: 'relative', overflow: 'hidden' }}>
+          <img src={content.hero.heroImage} alt="OBOMOCARE community care" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }} />
           <div className="hero__pattern"></div>
         </div>
       </section>
@@ -90,7 +91,8 @@ export const Home: React.FC = () => {
                 onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.borderColor = 'var(--color-accent)'; }}
                 onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.borderColor = 'rgba(255,255,255,0.08)'; }}
               >
-                <div className="card__body" style={{ padding: 0 }}>
+                <img src={program.image} alt={program.title} style={{ width: '100%', height: '200px', objectFit: 'cover' }} />
+                <div className="card__body" style={{ padding: 'var(--space-6)' }}>
                   <span style={{ display: 'inline-block', padding: 'var(--space-1) var(--space-3)', background: 'var(--color-accent)', color: '#fff', fontSize: 'var(--text-xs)', fontWeight: 600, borderRadius: 'var(--radius-pill)', marginBottom: 'var(--space-3)' }}>
                     {program.stats}
                   </span>
@@ -120,6 +122,7 @@ export const Home: React.FC = () => {
                 className="card"
                 style={{ textDecoration: 'none' }}
               >
+                <img src={story.image} alt={story.title} style={{ width: '100%', height: '200px', objectFit: 'cover' }} />
                 <div className="card__body">
                   <div className="card__tag">{story.category}</div>
                   <h3 className="card__title">{story.title}</h3>

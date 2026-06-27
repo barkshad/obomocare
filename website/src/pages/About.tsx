@@ -27,8 +27,11 @@ export const About: React.FC = () => {
           </div>
         </div>
 
-        <div style={{ background: 'var(--surface-elevated)', borderRadius: 'var(--radius-md)', padding: 'var(--space-16)', marginBottom: 'var(--space-16)', overflow: 'hidden' }}>
-          <div style={{ maxWidth: '48rem' }}>
+        <div style={{ display: 'flex', gap: 'var(--space-8)', alignItems: 'flex-start', background: 'var(--surface-elevated)', borderRadius: 'var(--radius-md)', padding: 'var(--space-8)', marginBottom: 'var(--space-16)', overflow: 'hidden' }}>
+          {content.about.founderImage && (
+            <img src={content.about.founderImage} alt="Founder" style={{ width: '240px', height: '240px', objectFit: 'cover', borderRadius: 'var(--radius-md)', flexShrink: 0 }} />
+          )}
+          <div>
             <p style={{ fontSize: 'var(--text-xl)', lineHeight: 1.6, fontStyle: 'italic', color: 'rgba(255,255,255,0.85)', marginBottom: 'var(--space-8)' }}>
               &ldquo;{content.about.founderStory.substring(0, 200)}&rdquo;
             </p>

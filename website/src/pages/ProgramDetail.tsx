@@ -20,6 +20,8 @@ export const ProgramDetail: React.FC = () => {
           <ArrowLeft size={16} /> All programmes
         </ReactRouterDOM.Link>
 
+        <img src={program.image} alt={program.title} style={{ width: '100%', height: '360px', objectFit: 'cover', borderRadius: 'var(--radius-md)', marginBottom: 'var(--space-8)' }} />
+
         <div className="features-head">
           <div className="features-head__tag">{program.stats}</div>
           <h1 style={{ fontSize: 'var(--text-5xl)', fontWeight: 700, color: '#fff', marginBottom: 'var(--space-6)' }}>

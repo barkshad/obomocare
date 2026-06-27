@@ -21,6 +21,8 @@ export const StoryDetail: React.FC = () => {
           <ArrowLeft size={16} /> All stories
         </ReactRouterDOM.Link>
 
+        <img src={story.image} alt={story.title} style={{ width: '100%', height: '360px', objectFit: 'cover', borderRadius: 'var(--radius-md)', marginBottom: 'var(--space-8)' }} />
+
         <div style={{ display: 'flex', gap: 'var(--space-4)', marginBottom: 'var(--space-4)' }}>
           <span style={{ padding: 'var(--space-1) var(--space-3)', background: 'var(--color-accent)', color: '#fff', fontSize: 'var(--text-xs)', fontWeight: 600, borderRadius: 'var(--radius-pill)' }}>
             {story.category}

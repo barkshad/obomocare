@@ -56,7 +56,9 @@ export const Gallery: React.FC = () => {
                     <Film size={10} /> Video
                   </div>
                 </div>
-              ) : null}
+              ) : (
+                <img src={item.url} alt={item.category} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              )}
               <div style={{ position: 'absolute', inset: 0, background: 'rgba(10,10,26,0)', transition: 'background 300ms ease', display: 'flex', alignItems: 'center', justifyContent: 'center', opacity: 0 }}
                 onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = 'rgba(10,10,26,0.6)'; (e.currentTarget as HTMLElement).style.opacity = '1'; }}
                 onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = 'rgba(10,10,26,0)'; (e.currentTarget as HTMLElement).style.opacity = '0'; }}
