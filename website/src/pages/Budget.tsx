@@ -44,11 +44,18 @@ export const Budget: React.FC = () => {
           ))}
         </div>
 
-        <div style={{ marginTop: 'var(--space-12)', padding: 'var(--space-10)', background: 'var(--surface-elevated)', borderRadius: 'var(--radius-md)', textAlign: 'center' }}>
-          <p style={{ color: 'rgba(255,255,255,0.7)', lineHeight: 1.7, maxWidth: '40ch', marginInline: 'auto' }}>
-            Quarterly financial reports published. Any donor can request a meeting to review. Zero admin deduction from donations — we raise admin costs separately.
-          </p>
-        </div>
+<div style={{ marginTop: 'var(--space-12)', padding: 'var(--space-10)', background: 'var(--color-accent)', borderRadius: 'var(--radius-md)', textAlign: 'center' }}>
+  <h3 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, color: '#fff', marginBottom: 'var(--space-4)' }}>
+    Back this proposal
+  </h3>
+  <p style={{ color: 'rgba(255,255,255,0.88)', marginBottom: 'var(--space-6)', lineHeight: 1.7, maxWidth: '40ch', marginInline: 'auto' }}>
+    One thousand five hundred households are waiting for this programme to begin. Every dollar is tracked and published.
+  </p>
+  <a href="/get-involved" className="btn btn--light">Support this proposal</a>
+  <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: 'var(--text-sm)', marginTop: 'var(--space-4)' }}>
+    Full proposal available on request — <a href="mailto:obomocare@gmail.com?subject=Proposal request" style={{ color: '#fff', textDecoration: 'underline' }}>email us</a>
+  </p>
+</div>
       </div>
     </div>
   );

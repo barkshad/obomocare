@@ -5,8 +5,11 @@ import { Logo } from './Logo';
 const NAV_LINKS = [
   { to: '/about', label: 'About' },
   { to: '/programs', label: 'Our work' },
+  { to: '/sponsorship', label: 'Sponsorship' },
   { to: '/impact', label: 'Impact' },
   { to: '/budget', label: 'Budget' },
+  { to: '/stories', label: 'Stories' },
+  { to: '/gallery', label: 'Gallery' },
   { to: '/get-involved', label: 'Get involved' },
   { to: '/contact', label: 'Contact' },
 ];
