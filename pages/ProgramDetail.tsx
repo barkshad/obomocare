@@ -18,10 +18,6 @@ export const ProgramDetail: React.FC = () => {
     return <ReactRouterDOM.Navigate to="/programs" replace />;
   }
 
-  if (!program) {
-    return <ReactRouterDOM.Navigate to="/programs" replace />;
-  }
-
   const programIcons: Record<string, string> = {
     'p1': 'Food basket',
     'p2': 'Transport',

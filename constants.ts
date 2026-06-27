@@ -20,7 +20,7 @@ export const DEFAULT_CONTENT: SiteContent = {
   hero: {
     headline: "Delivering care. Restoring dignity.",
     subheadline: "We are a registered CBO in Kisii and Nyamira. Food. Transport. Personal care. Companionship. The things that keep people alive and human — we bring them to the households formal systems keep missing.",
-    heroImage: "https://images.unsplash.com/flagged=1/photo-1544022613-e87ca75a784a?w=1920&h=1080&fit=crop"
+    heroImage: "https://images.unsplash.com/photo-1544022613-e87ca75a784a?w=1920&h=1080&fit=crop"
   },
   homePage: {
     stats: [

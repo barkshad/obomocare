@@ -1,20 +1,34 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# OBOMOCARE CBO
 
-# Run and deploy your AI Studio app
+Delivering care. Restoring dignity.
 
-This contains everything you need to run your app locally.
+OBOMOCARE is a registered Community Based Organisation serving vulnerable households in Kisii and Nyamira Counties, Kenya.
 
-View your app in AI Studio: https://ai.studio/apps/f4602d44-ffac-4b74-819b-4c76130e681c
+## Website
 
-## Run Locally
+The website source is in [`website/`](website/). It is a React + TypeScript + Vite app with Firebase backend.
 
-**Prerequisites:**  Node.js
+### Getting Started
 
+```bash
+cd website
+npm install
+npm run dev
+```
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+### Build
+
+```bash
+cd website
+npm run build
+npm run preview
+```
+
+### Stack
+
+- React 18 + TypeScript
+- Vite
+- Tailwind CSS
+- Firebase (Auth + Firestore)
+- Framer Motion
+- Recharts

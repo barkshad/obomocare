@@ -37,7 +37,7 @@ export const Stories: React.FC = () => {
                 </div>
                 <h2 className="font-serif text-2xl font-bold text-slate-900 mb-4">{story.title}</h2>
                 <p className="text-slate-600 mb-6 line-clamp-3">{story.excerpt}</p>
-                <button className="text-teal-600 font-bold hover:text-teal-800 transition-colors">Read Full Story &rarr;</button>
+                <span className="text-teal-600 font-bold opacity-60 cursor-default">Read Full Story &rarr;</span>
               </div>
             </GlassCard>
           ))}

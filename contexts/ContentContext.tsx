@@ -97,7 +97,7 @@ export const ContentProvider: React.FC<{ children: ReactNode }> = ({ children })
   const [loading, setLoading] = useState(true);
 
   // Check if we are using the placeholder API key.
-  const isDemoMode = !FIREBASE_CONFIG.apiKey || FIREBASE_CONFIG.apiKey === "YOUR_API_KEY_HERE";
+  const isDemoMode = !FIREBASE_CONFIG.apiKey || FIREBASE_CONFIG.apiKey === "YOUR_FIREBASE_API_KEY";
 
   useEffect(() => {
     if (isDemoMode) {

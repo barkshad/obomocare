@@ -3,6 +3,7 @@ import { useContent } from '../contexts/ContentContext';
 import { MapPin, Mail, Phone, Clock, MessageCircle } from 'lucide-react';
 
 const BRAND_BLUE = '#1A0FAB';
+const BRAND_BLUE_LIGHT = '#E8E6FA';
 const BRAND_ORANGE = '#E8751A';
 
 export const Contact: React.FC = () => {
