@@ -8,7 +8,7 @@ export const Gallery: React.FC = () => {
   const [selectedItem, setSelectedItem] = useState<MediaItem | null>(null);
   const [filter, setFilter] = useState<string>('All');
 
-  const categories = ['All', ...Array.from(new Set(content.gallery.map(item => item.category)))];
+  const categories = content.gallery.length > 0 ? ['All', ...Array.from(new Set(content.gallery.map(item => item.category)))] : ['All'];
 
   const filteredItems = useMemo(() => {
     if (filter === 'All') return content.gallery;

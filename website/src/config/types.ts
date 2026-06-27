@@ -51,7 +51,7 @@ export interface MediaItem {
   url: string;
   publicId: string;
   type: 'image' | 'video';
-  category: 'Education' | 'Community' | 'Welfare' | 'General';
+  category: 'Education' | 'Community' | 'Welfare' | 'General' | 'Care';
   createdAt: string;
 }
 
