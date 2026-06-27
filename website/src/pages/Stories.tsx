@@ -32,9 +32,9 @@ export const Stories: React.FC = () => {
               <div style={{ padding: 'var(--space-6)' }}>
                 <h2 style={{ fontSize: 'var(--text-xl)', fontWeight: 600, color: '#0A0A1A', marginBottom: 'var(--space-3)' }}>{story.title}</h2>
                 <p style={{ fontSize: 'var(--text-sm)', color: 'rgba(0,0,0,0.6)', lineHeight: 1.7, marginBottom: 'var(--space-4)' }}>{story.excerpt}</p>
-                <span style={{ color: 'var(--color-accent)', fontSize: 'var(--text-sm)', fontWeight: 600 }}>Read full story &rarr;</span>
-              </div>
-            </ReactRouterDOM.Link>
+<ReactRouterDOM.Link to={`/stories/${story.id}`} style={{ color: 'var(--color-secondary)', fontSize: 'var(--text-sm)', fontWeight: 600, textDecoration: 'none' }}>Read full story &rarr;</ReactRouterDOM.Link>
+        </div>
+      </ReactRouterDOM.Link>
           ))}
         </div>
       </div>

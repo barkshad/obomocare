@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import * as ReactRouterDOM from 'react-router-dom';
 import { Logo } from './Logo';
 
@@ -17,10 +17,19 @@ const NAV_LINKS = [
 export const Navbar: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => { document.body.style.overflow = ''; };
+  }, [menuOpen]);
+
   return (
     <header className="site-header">
       <nav className="nav" aria-label="Main navigation">
-        <ReactRouterDOM.Link to="/" className="nav__logo" aria-label="OBOMOCARE home">
+        <ReactRouterDOM.Link to="/" className="nav__logo" aria-label="OBOMOCARE home" onClick={() => setMenuOpen(false)}>
           <Logo />
         </ReactRouterDOM.Link>
 
@@ -34,6 +43,8 @@ export const Navbar: React.FC = () => {
           <span className="nav__toggle__bar"></span>
         </button>
 
+        {menuOpen && <div className={`nav__backdrop ${menuOpen ? 'open' : ''}`} onClick={() => setMenuOpen(false)} />}
+
         <ul className={`nav__menu ${menuOpen ? 'open' : ''}`} id="nav-menu" role="list">
           {NAV_LINKS.map((link) => (
             <li key={link.to}>
@@ -43,11 +54,7 @@ export const Navbar: React.FC = () => {
             </li>
           ))}
           <li>
-            <ReactRouterDOM.Link
-              to="/get-involved"
-              className="btn btn--accent"
-              onClick={() => setMenuOpen(false)}
-            >
+            <ReactRouterDOM.Link to="/get-involved" className="btn btn--accent" onClick={() => setMenuOpen(false)}>
               Support us
             </ReactRouterDOM.Link>
           </li>

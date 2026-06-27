@@ -6,13 +6,20 @@
     transition: border-color 200ms ease, box-shadow 200ms ease;
   }
 
+  .card:hover {
+    border-color: var(--color-secondary);
+    box-shadow: 0 4px 20px rgba(37, 99, 235, 0.08);
+  }
+
   .card--link {
     text-decoration: none;
     color: inherit;
+    display: block;
   }
 
   .card--link:hover {
     border-color: var(--color-secondary);
+    box-shadow: 0 4px 20px rgba(37, 99, 235, 0.08);
   }
 
   .card__body {
