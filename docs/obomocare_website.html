@@ -1,0 +1,1134 @@
+
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body, .ob-root { font-family: var(--font-sans, 'Segoe UI', sans-serif); }
+  .ob-root { color: var(--text-primary); background: transparent; }
+
+  /* Brand tokens */
+  :root {
+    --ob-blue: #1A0FAB;
+    --ob-orange: #E8751A;
+    --ob-blue-light: #E8E6FA;
+    --ob-orange-light: #FEF0E4;
+    --ob-blue-mid: #2D1FD4;
+  }
+
+  /* NAV */
+  .ob-nav {
+    background: var(--ob-blue);
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+  }
+  .ob-nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+  }
+  .ob-logo-mark {
+    width: 34px;
+    height: 34px;
+    background: var(--ob-orange);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 500;
+    color: #fff;
+    flex-shrink: 0;
+  }
+  .ob-nav-links {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+  }
+  .ob-nav-links a {
+    color: rgba(255,255,255,0.82);
+    text-decoration: none;
+    font-size: 13px;
+    transition: color 0.15s;
+  }
+  .ob-nav-links a:hover { color: #fff; }
+  .ob-nav-cta {
+    background: var(--ob-orange);
+    color: #fff;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+  }
+
+  /* HERO */
+  .ob-hero {
+    background: var(--ob-blue);
+    padding: 4rem 2rem 3.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .ob-hero::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 300px; height: 300px;
+    border-radius: 50%;
+    background: rgba(232,117,26,0.12);
+  }
+  .ob-hero::after {
+    content: '';
+    position: absolute;
+    bottom: -40px; left: 20%;
+    width: 180px; height: 180px;
+    border-radius: 50%;
+    background: rgba(232,117,26,0.07);
+  }
+  .ob-hero-inner { max-width: 600px; position: relative; z-index: 1; }
+  .ob-eyebrow {
+    display: inline-block;
+    background: rgba(232,117,26,0.25);
+    color: var(--ob-orange);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 100px;
+    margin-bottom: 1.25rem;
+  }
+  .ob-hero h1 {
+    font-size: 34px;
+    font-weight: 500;
+    color: #fff;
+    line-height: 1.25;
+    margin-bottom: 1.25rem;
+  }
+  .ob-hero h1 span { color: var(--ob-orange); }
+  .ob-hero-sub {
+    font-size: 15px;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    max-width: 520px;
+  }
+  .ob-hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+  .ob-btn-primary {
+    background: var(--ob-orange);
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .ob-btn-ghost {
+    background: transparent;
+    color: rgba(255,255,255,0.85);
+    border: 0.5px solid rgba(255,255,255,0.35);
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 400;
+    cursor: pointer;
+  }
+
+  /* STATS BAR */
+  .ob-stats {
+    background: var(--ob-orange);
+    padding: 1.25rem 2rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+  }
+  .ob-stat {
+    text-align: center;
+    color: #fff;
+  }
+  .ob-stat-num {
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 1.2;
+  }
+  .ob-stat-label {
+    font-size: 11px;
+    opacity: 0.85;
+    margin-top: 2px;
+    line-height: 1.4;
+  }
+
+  /* SECTIONS */
+  .ob-section {
+    padding: 3rem 2rem;
+  }
+  .ob-section-alt { background: var(--surface-1, #f7f7f5); }
+  .ob-section-blue { background: var(--ob-blue-light); }
+  .ob-section-header {
+    margin-bottom: 2rem;
+  }
+  .ob-section-header .ob-eyebrow {
+    background: var(--ob-orange-light);
+    color: var(--ob-orange);
+  }
+  .ob-section-alt .ob-section-header .ob-eyebrow,
+  .ob-section-blue .ob-section-header .ob-eyebrow {
+    background: var(--ob-orange-light);
+    color: var(--ob-orange);
+  }
+  .ob-section-title {
+    font-size: 24px;
+    font-weight: 500;
+    color: var(--text-primary);
+    margin-bottom: 0.6rem;
+    line-height: 1.3;
+  }
+  .ob-section-sub {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    max-width: 520px;
+  }
+
+  /* ABOUT */
+  .ob-about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: start;
+  }
+  .ob-about-body {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.8;
+  }
+  .ob-about-body p { margin-bottom: 1rem; }
+  .ob-about-body p:last-child { margin-bottom: 0; }
+  .ob-quote-block {
+    background: var(--ob-blue);
+    border-radius: 12px;
+    padding: 1.75rem;
+    color: #fff;
+  }
+  .ob-quote-text {
+    font-size: 15px;
+    line-height: 1.75;
+    margin-bottom: 1rem;
+    font-style: italic;
+    opacity: 0.9;
+  }
+  .ob-quote-attr {
+    font-size: 12px;
+    color: var(--ob-orange);
+    font-weight: 500;
+    letter-spacing: 0.5px;
+  }
+  .ob-values-list {
+    list-style: none;
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .ob-value-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color: var(--text-secondary);
+  }
+  .ob-value-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--ob-orange);
+    flex-shrink: 0;
+  }
+
+  /* PILLARS */
+  .ob-pillars {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  .ob-pillar {
+    background: var(--surface-2, #fff);
+    border: 0.5px solid var(--border);
+    border-radius: 12px;
+    padding: 1.5rem;
+  }
+  .ob-pillar-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    background: var(--ob-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    font-size: 20px;
+    color: #fff;
+  }
+  .ob-pillar h3 {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+  }
+  .ob-pillar p {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+  }
+
+  /* SITUATION */
+  .ob-situation-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+  .ob-situation-card {
+    background: var(--surface-2, #fff);
+    border: 0.5px solid var(--border);
+    border-radius: 12px;
+    padding: 1.25rem;
+    border-top: 3px solid var(--ob-orange);
+  }
+  .ob-situation-card h4 {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+  }
+  .ob-situation-card p {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.65;
+  }
+
+  /* THEORY OF CHANGE */
+  .ob-toc {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 1.5rem;
+    align-items: center;
+    margin: 1.5rem 0;
+  }
+  .ob-toc-problems, .ob-toc-outcomes { display: flex; flex-direction: column; gap: 8px; }
+  .ob-toc-item {
+    background: var(--surface-2, #fff);
+    border: 0.5px solid var(--border);
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+  }
+  .ob-toc-item strong { color: var(--text-primary); display: block; font-weight: 500; font-size: 13px; }
+  .ob-toc-center {
+    background: var(--ob-blue);
+    border-radius: 12px;
+    padding: 1.5rem 1rem;
+    text-align: center;
+    color: #fff;
+    min-width: 130px;
+  }
+  .ob-toc-center-title { font-size: 13px; font-weight: 500; line-height: 1.4; margin-bottom: 6px; }
+  .ob-toc-center-sub { font-size: 11px; opacity: 0.75; }
+  .ob-toc-arrow { font-size: 18px; text-align: center; color: var(--ob-orange); }
+  .ob-impact-chain {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .ob-chain-item {
+    background: var(--ob-blue-light);
+    color: var(--ob-blue);
+    border-radius: 6px;
+    padding: 6px 12px;
+    font-size: 12px;
+    font-weight: 500;
+  }
+  .ob-chain-arrow { color: var(--ob-orange); font-size: 16px; }
+
+  /* LOGFRAME KPIs */
+  .ob-kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+  .ob-kpi {
+    background: var(--surface-2, #fff);
+    border: 0.5px solid var(--border);
+    border-radius: 12px;
+    padding: 1.25rem;
+    text-align: center;
+  }
+  .ob-kpi-num {
+    font-size: 26px;
+    font-weight: 500;
+    color: var(--ob-orange);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .ob-kpi-label {
+    font-size: 12px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+  }
+  .ob-kpi-target {
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-top: 6px;
+    background: var(--ob-orange-light);
+    color: var(--ob-orange);
+    padding: 2px 8px;
+    border-radius: 100px;
+    display: inline-block;
+  }
+
+  /* VOLUNTEER */
+  .ob-vol-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: start;
+  }
+  .ob-training-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .ob-training-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 13px;
+    color: var(--text-secondary);
+    background: var(--surface-2, #fff);
+    border: 0.5px solid var(--border);
+    border-radius: 8px;
+    padding: 10px 14px;
+    line-height: 1.5;
+  }
+  .ob-training-icon {
+    color: var(--ob-orange);
+    font-size: 16px;
+    margin-top: 1px;
+    flex-shrink: 0;
+  }
+  .ob-career-box {
+    background: var(--ob-blue);
+    border-radius: 12px;
+    padding: 1.5rem;
+    color: #fff;
+    margin-top: 1rem;
+  }
+  .ob-career-box h4 { font-size: 14px; font-weight: 500; margin-bottom: 0.5rem; }
+  .ob-career-box p { font-size: 13px; opacity: 0.8; line-height: 1.6; }
+
+  /* SUSTAINABILITY / FUNDING */
+  .ob-fund-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  .ob-fund-card {
+    background: var(--surface-2, #fff);
+    border: 0.5px solid var(--border);
+    border-radius: 12px;
+    padding: 1.25rem;
+  }
+  .ob-fund-card h4 {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .ob-fund-card h4 i { color: var(--ob-orange); font-size: 16px; }
+  .ob-fund-card p { font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
+  .ob-fund-badge {
+    display: inline-block;
+    font-size: 10px;
+    padding: 2px 8px;
+    border-radius: 100px;
+    margin-top: 6px;
+    font-weight: 500;
+  }
+  .ob-fund-badge.active { background: #e6f7ef; color: #0a6e45; }
+  .ob-fund-badge.growing { background: var(--ob-blue-light); color: var(--ob-blue); }
+  .ob-fund-badge.pilot { background: var(--ob-orange-light); color: var(--ob-orange); }
+
+  /* BUDGET */
+  .ob-budget-total {
+    background: var(--ob-blue);
+    border-radius: 12px;
+    padding: 2rem;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  .ob-budget-total-label { font-size: 13px; opacity: 0.75; margin-bottom: 8px; }
+  .ob-budget-total-num { font-size: 36px; font-weight: 500; }
+  .ob-budget-total-sub { font-size: 13px; opacity: 0.7; margin-top: 4px; }
+  .ob-budget-lines { display: flex; flex-direction: column; gap: 8px; }
+  .ob-budget-line {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    gap: 1rem;
+    align-items: center;
+    background: var(--surface-2, #fff);
+    border: 0.5px solid var(--border);
+    border-radius: 8px;
+    padding: 12px 16px;
+  }
+  .ob-budget-line-name { font-size: 13px; color: var(--text-secondary); }
+  .ob-budget-line-bar-wrap { width: 100%; height: 4px; background: var(--border); border-radius: 2px; margin-top: 4px; }
+  .ob-budget-line-bar { height: 4px; background: var(--ob-orange); border-radius: 2px; }
+  .ob-budget-line-amt { font-size: 13px; font-weight: 500; color: var(--text-primary); white-space: nowrap; }
+  .ob-budget-pct { font-size: 11px; color: var(--text-muted); }
+
+  /* GOVERNANCE */
+  .ob-org-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+  .ob-org-card {
+    background: var(--surface-2, #fff);
+    border: 0.5px solid var(--border);
+    border-radius: 12px;
+    padding: 1.25rem;
+    text-align: center;
+  }
+  .ob-org-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--ob-blue-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 0.75rem;
+    font-size: 20px;
+    color: var(--ob-blue);
+  }
+  .ob-org-card h4 { font-size: 13px; font-weight: 500; margin-bottom: 4px; }
+  .ob-org-card p { font-size: 12px; color: var(--text-secondary); line-height: 1.5; }
+  .ob-org-badge {
+    font-size: 10px;
+    padding: 2px 8px;
+    border-radius: 100px;
+    background: var(--ob-orange-light);
+    color: var(--ob-orange);
+    font-weight: 500;
+    display: inline-block;
+    margin-top: 6px;
+  }
+
+  /* DONATE CTA */
+  .ob-cta {
+    background: var(--ob-orange);
+    padding: 3rem 2rem;
+    text-align: center;
+  }
+  .ob-cta h2 { font-size: 24px; font-weight: 500; color: #fff; margin-bottom: 0.75rem; }
+  .ob-cta p { font-size: 14px; color: rgba(255,255,255,0.85); max-width: 480px; margin: 0 auto 1.75rem; line-height: 1.7; }
+  .ob-cta-buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .ob-cta-btn-white {
+    background: #fff;
+    color: var(--ob-orange);
+    border: none;
+    padding: 12px 28px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  .ob-cta-btn-outline {
+    background: transparent;
+    color: #fff;
+    border: 1.5px solid rgba(255,255,255,0.6);
+    padding: 12px 28px;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+
+  /* FOOTER */
+  .ob-footer {
+    background: var(--ob-blue);
+    padding: 2rem;
+    color: rgba(255,255,255,0.7);
+    font-size: 13px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+  .ob-footer-brand { color: #fff; font-weight: 500; margin-bottom: 6px; }
+  .ob-footer p { line-height: 1.6; }
+  .ob-footer-links { display: flex; flex-direction: column; gap: 4px; }
+  .ob-footer-links a { color: rgba(255,255,255,0.65); text-decoration: none; }
+  .ob-footer-links a:hover { color: var(--ob-orange); }
+  .ob-footer-contact { color: var(--ob-orange); }
+
+  /* DIVIDER */
+  .ob-divider { border: none; border-top: 0.5px solid var(--border); margin: 0; }
+
+  /* RISK */
+  .ob-risk-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .ob-risk-table th {
+    text-align: left;
+    padding: 8px 12px;
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    border-bottom: 0.5px solid var(--border);
+  }
+  .ob-risk-table td {
+    padding: 10px 12px;
+    color: var(--text-secondary);
+    border-bottom: 0.5px solid var(--border);
+    vertical-align: top;
+    line-height: 1.5;
+  }
+  .ob-risk-pill {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 100px;
+    font-size: 11px;
+    font-weight: 500;
+  }
+  .ob-risk-high { background: #fde8e8; color: #b91c1c; }
+  .ob-risk-med { background: #fef3c7; color: #b45309; }
+  .ob-risk-low { background: #d1fae5; color: #065f46; }
+
+  @media (max-width: 600px) {
+    .ob-stats { grid-template-columns: repeat(2, 1fr); }
+    .ob-about-grid, .ob-vol-grid, .ob-toc { grid-template-columns: 1fr; }
+    .ob-pillars, .ob-situation-grid, .ob-org-grid, .ob-kpi-grid, .ob-fund-grid { grid-template-columns: 1fr; }
+    .ob-hero h1 { font-size: 24px; }
+    .ob-footer { grid-template-columns: 1fr; }
+    .ob-toc { display: flex; flex-direction: column; }
+  }
+</style>
+
+<div class="ob-root">
+  <h2 class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden">OBOMOCARE Community Based Organisation — website content preview</h2>
+
+  <!-- NAV -->
+  <nav class="ob-nav">
+    <div class="ob-nav-brand">
+      <div class="ob-logo-mark">OC</div>
+      OBOMOCARE
+    </div>
+    <ul class="ob-nav-links">
+      <li><a href="#">Who we are</a></li>
+      <li><a href="#">Our work</a></li>
+      <li><a href="#">Impact</a></li>
+      <li><a href="#">Get involved</a></li>
+    </ul>
+    <button class="ob-nav-cta" onclick="sendPrompt('Draft a donor outreach email for OBOMOCARE ↗')">Support us</button>
+  </nav>
+
+  <!-- HERO -->
+  <section class="ob-hero">
+    <div class="ob-hero-inner">
+      <div class="ob-eyebrow">Gusii Region, Kenya · Est. 2020</div>
+      <h1>Delivering care.<br><span>Restoring dignity.</span></h1>
+      <p class="ob-hero-sub">OBOMOCARE is a registered Community Based Organisation serving vulnerable households in Kisii and Nyamira Counties — bringing food, transport, personal care, and companionship to those left behind by formal systems.</p>
+      <div class="ob-hero-actions">
+        <button class="ob-btn-primary" onclick="sendPrompt('What does OBOMOCARE do and how can I support them? ↗')">
+          <i class="ti ti-heart" aria-hidden="true"></i>
+          Support our work
+        </button>
+        <button class="ob-btn-ghost">Read the proposal</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS BAR -->
+  <div class="ob-stats">
+    <div class="ob-stat">
+      <div class="ob-stat-num">2,000+</div>
+      <div class="ob-stat-label">Families served since 2020</div>
+    </div>
+    <div class="ob-stat">
+      <div class="ob-stat-num">5 yrs</div>
+      <div class="ob-stat-label">Community-funded operation</div>
+    </div>
+    <div class="ob-stat">
+      <div class="ob-stat-num">40</div>
+      <div class="ob-stat-label">Volunteer caregivers</div>
+    </div>
+    <div class="ob-stat">
+      <div class="ob-stat-num">1.9M</div>
+      <div class="ob-stat-label">People in the Gusii Region</div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section class="ob-section">
+    <div class="ob-section-header">
+      <div class="ob-eyebrow">Who we are</div>
+      <h2 class="ob-section-title">A community that refuses to leave its most vulnerable behind</h2>
+    </div>
+    <div class="ob-about-grid">
+      <div class="ob-about-body">
+        <p>OBOMOCARE was founded in 2020 by members of the Gusii community who witnessed at close range the compounding hardships facing the most vulnerable households in Kisii and Nyamira Counties. The elderly, the chronically ill, persons living with disabilities, and households headed by orphaned children were living without food, without transport to health facilities, without personal care, and without companionship.</p>
+        <p>The name comes from the Gusii word <em>obomo</em> — nurturing warmth, the sustaining care a parent gives a child. That word is both our name and our mission: dignified, practical, integrated support as a matter of right, not charity.</p>
+        <p>For five years we have operated entirely on community-generated resources — personal contributions, supermarket donations, church networks, and Harambee fundraising. We have served over two thousand families. Now we are ready to scale.</p>
+        <ul class="ob-values-list">
+          <li class="ob-value-item"><div class="ob-value-dot"></div>Dignity · Compassion · Community</li>
+          <li class="ob-value-item"><div class="ob-value-dot"></div>Accountability · Integrity · Inclusion</li>
+          <li class="ob-value-item"><div class="ob-value-dot"></div>Non-partisan · Not-for-profit · Sustainability</li>
+        </ul>
+      </div>
+      <div class="ob-quote-block">
+        <p class="ob-quote-text">"Families were struggling not with one problem but with several problems simultaneously, and the absence of any coordinating support structure meant that individuals fell through every available gap. OBOMOCARE was founded to close those gaps."</p>
+        <div class="ob-quote-attr">— OBOMOCARE Proposal, June 2026</div>
+        <div style="margin-top: 1.25rem; padding-top: 1rem; border-top: 0.5px solid rgba(255,255,255,0.2);">
+          <div style="font-size: 12px; opacity: 0.7; margin-bottom: 6px;">Motto</div>
+          <div style="font-size: 16px; font-weight: 500; color: var(--ob-orange);">Care. Unity. Dignity.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="ob-divider">
+
+  <!-- PROGRAMME PILLARS -->
+  <section class="ob-section ob-section-alt">
+    <div class="ob-section-header">
+      <div class="ob-eyebrow">Our work</div>
+      <h2 class="ob-section-title">Four pillars. One integrated model.</h2>
+      <p class="ob-section-sub">We don't choose between food or healthcare or dignity. The needs don't arrive separately — and neither do our interventions.</p>
+    </div>
+    <div class="ob-pillars">
+      <div class="ob-pillar">
+        <div class="ob-pillar-icon"><i class="ti ti-basket" aria-hidden="true"></i></div>
+        <h3>Food support</h3>
+        <p>A fortnightly OBOMOCARE Food Basket delivered to enrolled households, plus meal coordination for elderly persons who cannot cook independently. Sourced through supermarket, business, and church partnerships.</p>
+      </div>
+      <div class="ob-pillar">
+        <div class="ob-pillar-icon"><i class="ti ti-motorbike" aria-hidden="true"></i></div>
+        <h3>Transport facilitation</h3>
+        <p>Formal partnerships with boda boda associations ensure enrolled beneficiaries reach health facilities, attend clinic appointments, and maintain medication regimens — removing the cost and physical barrier of rural transport.</p>
+      </div>
+      <div class="ob-pillar">
+        <div class="ob-pillar-icon" style="background: var(--ob-orange);"><i class="ti ti-hand-love" aria-hidden="true"></i></div>
+        <h3>Personal care and dignity</h3>
+        <p>Trained volunteer caregivers provide bathing, dressing, grooming, wound care, and hygiene support at the household level. Dignity is not a luxury. It is a right. Every visit is documented to catch deterioration early.</p>
+      </div>
+      <div class="ob-pillar">
+        <div class="ob-pillar-icon" style="background: var(--ob-orange);"><i class="ti ti-users" aria-hidden="true"></i></div>
+        <h3>Companionship and inclusion</h3>
+        <p>Structured social engagement — conversation, games, storytelling, accompaniment to community events — combats isolation that accelerates cognitive decline and withdrawal. We have seen it restore people's will to live fully.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SITUATION ANALYSIS -->
+  <section class="ob-section">
+    <div class="ob-section-header">
+      <div class="ob-eyebrow">The context</div>
+      <h2 class="ob-section-title">Why the Gusii Region, and why now</h2>
+      <p class="ob-section-sub">Kisii and Nyamira Counties are home to nearly 1.9 million people. Food poverty rates exceed the national average. Healthcare access barriers are acute. And the people most at risk fall through every gap.</p>
+    </div>
+    <div class="ob-situation-grid">
+      <div class="ob-situation-card">
+        <h4>Food poverty</h4>
+        <p>39.7% food poverty in Kisii County and 35.9% in Nyamira — both significantly above Kenya's national rate. Chronic malnutrition weakens immunity and worsens disease.</p>
+      </div>
+      <div class="ob-situation-card">
+        <h4>Healthcare access barriers</h4>
+        <p>A boda boda trip to a clinic represents a significant share of daily household income. Missed appointments lead to treatment failure. Kenya records 35,000+ infant deaths annually — largely in rural communities.</p>
+      </div>
+      <div class="ob-situation-card">
+        <h4>The caregiving gap</h4>
+        <p>As working-age adults migrate to cities, elderly parents are left without daily care. Without personal support, hygiene-related conditions develop, dignity erodes, and isolation deepens.</p>
+      </div>
+      <div class="ob-situation-card">
+        <h4>Social isolation</h4>
+        <p>Many individuals OBOMOCARE serves have no regular visitor. This isolation accelerates cognitive decline, deepens depression, and reduces engagement with health and community systems.</p>
+      </div>
+      <div class="ob-situation-card">
+        <h4>Structural absence</h4>
+        <p>Kenya's formal health system operates at facility level. Social protection programmes don't reach the majority of households OBOMOCARE serves. Community Health Promoters lack logistical and material support.</p>
+      </div>
+      <div class="ob-situation-card">
+        <h4>Compounding cycles</h4>
+        <p>Food insecurity weakens immunity → illness increases → healthcare is inaccessible → treatment fails → caregiving burden grows → isolation deepens. Each problem amplifies the others. Our four pillars interrupt all four simultaneously.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- THEORY OF CHANGE -->
+  <section class="ob-section ob-section-blue">
+    <div class="ob-section-header">
+      <div class="ob-eyebrow">Theory of change</div>
+      <h2 class="ob-section-title">Breaking the cycle</h2>
+      <p class="ob-section-sub">Each of the four root problems causes and amplifies the others. OBOMOCARE's integrated response interrupts all four simultaneously.</p>
+    </div>
+    <div class="ob-toc">
+      <div class="ob-toc-problems">
+        <div class="ob-toc-item"><strong>Food insecurity</strong>Malnutrition weakens immunity and worsens chronic illness</div>
+        <div class="ob-toc-item"><strong>Mobility barriers</strong>No affordable transport → missed clinic visits → treatment failure</div>
+        <div class="ob-toc-item"><strong>Caregiving gaps</strong>No personal care → hygiene illness, pressure sores, loss of dignity</div>
+        <div class="ob-toc-item"><strong>Social isolation</strong>No companionship → depression, cognitive decline, withdrawal</div>
+      </div>
+      <div>
+        <div class="ob-toc-arrow">→</div>
+      </div>
+      <div>
+        <div class="ob-toc-center">
+          <div class="ob-toc-center-title">OBOMOCARE<br>Integrated Model</div>
+          <div class="ob-toc-center-sub" style="margin-top: 10px; font-size: 12px; opacity: 0.8;">Food · Transport<br>Personal care · Companionship</div>
+        </div>
+      </div>
+    </div>
+    <div class="ob-impact-chain">
+      <div class="ob-chain-item">Improved clinic attendance</div>
+      <div class="ob-chain-arrow">→</div>
+      <div class="ob-chain-item">Better nutrition</div>
+      <div class="ob-chain-arrow">→</div>
+      <div class="ob-chain-item">Restored dignity</div>
+      <div class="ob-chain-arrow">→</div>
+      <div class="ob-chain-item">Reduced isolation</div>
+      <div class="ob-chain-arrow">→</div>
+      <div class="ob-chain-item" style="background: var(--ob-blue); color: #fff;">Household wellbeing</div>
+      <div class="ob-chain-arrow">→</div>
+      <div class="ob-chain-item" style="background: var(--ob-blue); color: #fff;">Community resilience</div>
+    </div>
+  </section>
+
+  <!-- KPIs / LOGFRAME -->
+  <section class="ob-section ob-section-alt">
+    <div class="ob-section-header">
+      <div class="ob-eyebrow">Impact targets</div>
+      <h2 class="ob-section-title">What success looks like at month 24</h2>
+    </div>
+    <div class="ob-kpi-grid">
+      <div class="ob-kpi">
+        <div class="ob-kpi-num">1,500</div>
+        <div class="ob-kpi-label">Vulnerable households enrolled and receiving full programme support</div>
+        <div class="ob-kpi-target">By month 24</div>
+      </div>
+      <div class="ob-kpi">
+        <div class="ob-kpi-num">80%</div>
+        <div class="ob-kpi-label">Of enrolled households with adequate food access (2+ meals/day)</div>
+        <div class="ob-kpi-target">Up from below 50%</div>
+      </div>
+      <div class="ob-kpi">
+        <div class="ob-kpi-num">85%</div>
+        <div class="ob-kpi-label">Clinic appointment attendance rate among beneficiaries</div>
+        <div class="ob-kpi-target">Up from below 60%</div>
+      </div>
+      <div class="ob-kpi">
+        <div class="ob-kpi-num">90%</div>
+        <div class="ob-kpi-label">Beneficiaries reporting improved dignity and respect</div>
+        <div class="ob-kpi-target">Not yet measured</div>
+      </div>
+      <div class="ob-kpi">
+        <div class="ob-kpi-num">60%</div>
+        <div class="ob-kpi-label">Reduction in social isolation score from baseline</div>
+        <div class="ob-kpi-target">Baseline at month 1</div>
+      </div>
+      <div class="ob-kpi">
+        <div class="ob-kpi-num">85%</div>
+        <div class="ob-kpi-label">Volunteer caregiver retention rate</div>
+        <div class="ob-kpi-target">Up from ~70%</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VOLUNTEER CORPS -->
+  <section class="ob-section">
+    <div class="ob-section-header">
+      <div class="ob-eyebrow">Volunteer caregiver corps</div>
+      <h2 class="ob-section-title">Forty trained caregivers. One community.</h2>
+      <p class="ob-section-sub">Our volunteer caregivers are the heart of OBOMOCARE. Drawn from the communities they serve, trained to a professional standard, and supported to stay.</p>
+    </div>
+    <div class="ob-vol-grid">
+      <div>
+        <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 1.25rem;">The programme will train and deploy 40 community volunteers drawn from the target sub-counties. Training is delivered in partnership with a qualified health institution and covers:</p>
+        <ul class="ob-training-list">
+          <li class="ob-training-item"><i class="ti ti-check ob-training-icon" aria-hidden="true"></i>Personal care techniques — bathing, dressing, grooming, wound care</li>
+          <li class="ob-training-item"><i class="ti ti-check ob-training-icon" aria-hidden="true"></i>Safeguarding and dignity principles</li>
+          <li class="ob-training-item"><i class="ti ti-check ob-training-icon" aria-hidden="true"></i>Basic health literacy and referral documentation</li>
+          <li class="ob-training-item"><i class="ti ti-check ob-training-icon" aria-hidden="true"></i>First Aid and CPR</li>
+          <li class="ob-training-item"><i class="ti ti-check ob-training-icon" aria-hidden="true"></i>Waste management</li>
+          <li class="ob-training-item"><i class="ti ti-check ob-training-icon" aria-hidden="true"></i>Basic mental health support</li>
+          <li class="ob-training-item"><i class="ti ti-check ob-training-icon" aria-hidden="true"></i>Documentation and communication skills</li>
+        </ul>
+      </div>
+      <div>
+        <div class="ob-career-box">
+          <h4>A career pathway, not just a volunteer role</h4>
+          <p>Volunteers receive a monthly support stipend, transport reimbursements, peer support groups, and formal recognition. Skills gained through the programme qualify volunteers for progression into community health assistant roles within the county government system.</p>
+        </div>
+        <div style="background: var(--surface-1, #f7f7f5); border: 0.5px solid var(--border); border-radius: 12px; padding: 1.25rem; margin-top: 1rem;">
+          <p style="font-size: 13px; color: var(--text-secondary); margin-bottom: 0.75rem;">Current volunteer base</p>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">
+            <div style="text-align: center;">
+              <div style="font-size: 22px; font-weight: 500; color: var(--ob-orange);">22</div>
+              <div style="font-size: 12px; color: var(--text-muted);">Active caregivers</div>
+            </div>
+            <div style="text-align: center;">
+              <div style="font-size: 22px; font-weight: 500; color: var(--ob-orange);">18</div>
+              <div style="font-size: 12px; color: var(--text-muted);">CHV partners linked</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BUDGET -->
+  <section class="ob-section ob-section-alt">
+    <div class="ob-section-header">
+      <div class="ob-eyebrow">Funding request</div>
+      <h2 class="ob-section-title">USD 1,801,697 over 24 months</h2>
+      <p class="ob-section-sub">This is not a request for charity directed at an untested idea. OBOMOCARE has operated for five years without a single dollar of international funding. We ask to be supported to scale what already works.</p>
+    </div>
+    <div class="ob-budget-total">
+      <div class="ob-budget-total-label">Total international funding requested</div>
+      <div class="ob-budget-total-num">USD 1,801,697</div>
+      <div class="ob-budget-total-sub">24-month programme · Kisii and Nyamira Counties · 1,500 households</div>
+    </div>
+    <div class="ob-budget-lines">
+      <div class="ob-budget-line">
+        <div>
+          <div class="ob-budget-line-name">Food support packages (1,500 households × 24 months)</div>
+          <div class="ob-budget-line-bar-wrap"><div class="ob-budget-line-bar" style="width: 60%"></div></div>
+        </div>
+        <div class="ob-budget-pct">60%</div>
+        <div class="ob-budget-line-amt">USD 1,080,000</div>
+      </div>
+      <div class="ob-budget-line">
+        <div>
+          <div class="ob-budget-line-name">Personal care and hygiene supply kits</div>
+          <div class="ob-budget-line-bar-wrap"><div class="ob-budget-line-bar" style="width: 14%"></div></div>
+        </div>
+        <div class="ob-budget-pct">14%</div>
+        <div class="ob-budget-line-amt">USD 252,000</div>
+      </div>
+      <div class="ob-budget-line">
+        <div>
+          <div class="ob-budget-line-name">Transport facilitation fund</div>
+          <div class="ob-budget-line-bar-wrap"><div class="ob-budget-line-bar" style="width: 6%"></div></div>
+        </div>
+        <div class="ob-budget-pct">6%</div>
+        <div class="ob-budget-line-amt">USD 108,000</div>
+      </div>
+      <div class="ob-budget-line">
+        <div>
+          <div class="ob-budget-line-name">Volunteer stipends (40 caregivers × 24 months)</div>
+          <div class="ob-budget-line-bar-wrap"><div class="ob-budget-line-bar" style="width: 7.5%"></div></div>
+        </div>
+        <div class="ob-budget-pct">7.5%</div>
+        <div class="ob-budget-line-amt">USD 134,400</div>
+      </div>
+      <div class="ob-budget-line">
+        <div>
+          <div class="ob-budget-line-name">Administration and staffing (below 15% of total)</div>
+          <div class="ob-budget-line-bar-wrap"><div class="ob-budget-line-bar" style="width: 8%"></div></div>
+        </div>
+        <div class="ob-budget-pct">8%</div>
+        <div class="ob-budget-line-amt">USD 143,440</div>
+      </div>
+      <div class="ob-budget-line">
+        <div>
+          <div class="ob-budget-line-name">Digital coordination system + outreach + contingency</div>
+          <div class="ob-budget-line-bar-wrap"><div class="ob-budget-line-bar" style="width: 4.5%"></div></div>
+        </div>
+        <div class="ob-budget-pct">4.5%</div>
+        <div class="ob-budget-line-amt">USD 83,857</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SUSTAINABILITY -->
+  <section class="ob-section">
+    <div class="ob-section-header">
+      <div class="ob-eyebrow">Sustainability</div>
+      <h2 class="ob-section-title">Built to last beyond any single donor</h2>
+      <p class="ob-section-sub">OBOMOCARE is committed to revenue diversification, volunteer retention, and generating rigorous programme evidence that attracts future partners independently.</p>
+    </div>
+    <div class="ob-fund-grid">
+      <div class="ob-fund-card">
+        <h4><i class="ti ti-building-store" aria-hidden="true"></i>Local business partnerships</h4>
+        <p>In-kind food donations and seasonal campaigns with regional supermarkets and retailers across Kisii and Nyamira.</p>
+        <span class="ob-fund-badge active">Active · 6 partners</span>
+      </div>
+      <div class="ob-fund-card">
+        <h4><i class="ti ti-building-church" aria-hidden="true"></i>Church and faith networks</h4>
+        <p>Regular collections, volunteer mobilization, and community outreach facilitation through four active congregations.</p>
+        <span class="ob-fund-badge active">Active · 4 congregations</span>
+      </div>
+      <div class="ob-fund-card">
+        <h4><i class="ti ti-world" aria-hidden="true"></i>Diaspora fundraising</h4>
+        <p>Online campaigns targeting the Gusii diaspora within Kenya and internationally. A digital platform will be formalized under the proposed programme.</p>
+        <span class="ob-fund-badge growing">Growing</span>
+      </div>
+      <div class="ob-fund-card">
+        <h4><i class="ti ti-motorbike" aria-hidden="true"></i>Boda boda partnerships</h4>
+        <p>Negotiated subsidised transport rates for clinic visits. Two associations currently engaged in pilot arrangements.</p>
+        <span class="ob-fund-badge pilot">Pilot</span>
+      </div>
+      <div class="ob-fund-card">
+        <h4><i class="ti ti-building" aria-hidden="true"></i>County government</h4>
+        <p>Integration dialogue underway with county social protection and community health departments. Potential co-funding pathway.</p>
+        <span class="ob-fund-badge growing">In dialogue</span>
+      </div>
+      <div class="ob-fund-card">
+        <h4><i class="ti ti-network" aria-hidden="true"></i>NGO sub-granting</h4>
+        <p>Positioning OBOMOCARE as a credible CBO implementing partner for larger development organisations operating in the region.</p>
+        <span class="ob-fund-badge growing">Prospecting</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- GOVERNANCE -->
+  <section class="ob-section ob-section-alt">
+    <div class="ob-section-header">
+      <div class="ob-eyebrow">Governance and accountability</div>
+      <h2 class="ob-section-title">Structured from the start</h2>
+      <p class="ob-section-sub">OBOMOCARE is governed by a constitution adopted at its inaugural General Assembly. Authority is distributed across six independent organs with clear mandates and checks.</p>
+    </div>
+    <div class="ob-org-grid">
+      <div class="ob-org-card">
+        <div class="ob-org-avatar"><i class="ti ti-users" aria-hidden="true"></i></div>
+        <h4>General Assembly</h4>
+        <p>Supreme decision-making organ. All registered members in good standing. Adopts constitution, elects trustees, approves annual accounts.</p>
+        <span class="ob-org-badge">Supreme organ</span>
+      </div>
+      <div class="ob-org-card">
+        <div class="ob-org-avatar"><i class="ti ti-shield" aria-hidden="true"></i></div>
+        <h4>Board of Trustees</h4>
+        <p>Five to nine members elected for 3-year terms. Responsible for strategic direction, financial oversight, and ensuring legal compliance.</p>
+        <span class="ob-org-badge">Meets quarterly</span>
+      </div>
+      <div class="ob-org-card">
+        <div class="ob-org-avatar"><i class="ti ti-settings" aria-hidden="true"></i></div>
+        <h4>Executive Committee</h4>
+        <p>Nine elected officers including Chairperson, Secretary, Treasurer, Programmes Officer, Volunteer Coordinator, and Community Liaison Officer.</p>
+        <span class="ob-org-badge">Meets monthly</span>
+      </div>
+      <div class="ob-org-card">
+        <div class="ob-org-avatar"><i class="ti ti-chart-bar" aria-hidden="true"></i></div>
+        <h4>Programmes Committee</h4>
+        <p>Oversight and strategic guidance on all four programme pillars. Submits quarterly programme reports to the Board of Trustees.</p>
+        <span class="ob-org-badge">Oversight body</span>
+      </div>
+      <div class="ob-org-card">
+        <div class="ob-org-avatar"><i class="ti ti-report-money" aria-hidden="true"></i></div>
+        <h4>Finance and Audit Committee</h4>
+        <p>Reviews all financial statements before Board presentation. Annual external audit by independent qualified auditor. Full financial transparency to all donors.</p>
+        <span class="ob-org-badge">Annual audit</span>
+      </div>
+      <div class="ob-org-card">
+        <div class="ob-org-avatar"><i class="ti ti-gavel" aria-hidden="true"></i></div>
+        <h4>Disciplinary Committee</h4>
+        <p>Independent body handling all disciplinary matters. No Executive Committee member may sit on it. Operates free from interference by any other organ.</p>
+        <span class="ob-org-badge">Independent</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- RISK -->
+  <section class="ob-section">
+    <div class="ob-section-header">
+      <div class="ob-eyebrow">Risk management</div>
+      <h2 class="ob-section-title">Risks identified and mitigated</h2>
+    </div>
+    <table class="ob-risk-table">
+      <thead>
+        <tr>
+          <th>Risk</th>
+          <th>Likelihood</th>
+          <th>Impact</th>
+          <th>Mitigation</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Volunteer attrition</td>
+          <td><span class="ob-risk-pill ob-risk-med">Medium</span></td>
+          <td><span class="ob-risk-pill ob-risk-high">High</span></td>
+          <td>Monthly stipend, training, peer support, recognition, clear role boundaries</td>
+        </tr>
+        <tr>
+          <td>Food supply disruption</td>
+          <td><span class="ob-risk-pill ob-risk-med">Medium</span></td>
+          <td><span class="ob-risk-pill ob-risk-high">High</span></td>
+          <td>Four+ supplier base; emergency reserve covering two months of food costs</td>
+        </tr>
+        <tr>
+          <td>Transport cost increases</td>
+          <td><span class="ob-risk-pill ob-risk-med">Medium</span></td>
+          <td><span class="ob-risk-pill ob-risk-med">Medium</span></td>
+          <td>MOUs with two boda boda associations; cash reserve; bicycle ambulance exploration</td>
+        </tr>
+        <tr>
+          <td>Donor funding interruption</td>
+          <td><span class="ob-risk-pill ob-risk-low">Low</span></td>
+          <td><span class="ob-risk-pill ob-risk-high">High</span></td>
+          <td>Diversified funding base; three-month operating reserve; phased milestone spending</td>
+        </tr>
+        <tr>
+          <td>Safeguarding risk to beneficiaries</td>
+          <td><span class="ob-risk-pill ob-risk-low">Low</span></td>
+          <td><span class="ob-risk-pill ob-risk-high" style="background: #fee2e2; color: #991b1b;">Very High</span></td>
+          <td>Safeguarding policy in place; mandatory training for all volunteers; incident reporting; Board oversight</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- CTA -->
+  <div class="ob-cta">
+    <h2>The people we serve are our neighbours.</h2>
+    <p>Each one has a name, a story, and a right to care. OBOMOCARE exists to make that care real. We invite you to make it possible at scale. Full financial transparency, quarterly reporting, and open donor access guaranteed.</p>
+    <div class="ob-cta-buttons">
+      <button class="ob-cta-btn-white" onclick="sendPrompt('Help me write a message expressing interest in funding OBOMOCARE ↗')">Partner with us</button>
+      <button class="ob-cta-btn-outline" onclick="sendPrompt('Summarise the full OBOMOCARE funding proposal for a donor brief ↗')">Read the full proposal</button>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="ob-footer">
+    <div>
+      <div class="ob-footer-brand">OBOMOCARE Community Based Organisation</div>
+      <p>Gusii Region, Kenya · Kisii and Nyamira Counties<br>Established 2020 · Registered CBO, Kenya</p>
+      <p style="margin-top: 8px;">Contact: <a class="ob-footer-contact" href="mailto:obomocare@gmail.com">obomocare@gmail.com</a></p>
+    </div>
+    <div>
+      <div class="ob-footer-brand" style="margin-bottom: 8px;">Quick links</div>
+      <div class="ob-footer-links">
+        <a href="#">Who we are</a>
+        <a href="#">Our four programme pillars</a>
+        <a href="#">Volunteer caregiver programme</a>
+        <a href="#">Funding proposal</a>
+        <a href="#">Governance and constitution</a>
+        <a href="#">Contact us</a>
+      </div>
+    </div>
+  </footer>
+</div>
