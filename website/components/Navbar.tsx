@@ -1,6 +1,14 @@
 import React, { useState } from 'react';
 import * as ReactRouterDOM from 'react-router-dom';
-import { BRAND } from '../brand';
+
+const NAV_LINKS = [
+  { to: '/about', label: 'About' },
+  { to: '/programs', label: 'Our work' },
+  { to: '/impact', label: 'Impact' },
+  { to: '/budget', label: 'Budget' },
+  { to: '/get-involved', label: 'Get involved' },
+  { to: '/contact', label: 'Contact' },
+];
 
 export const Navbar: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -24,13 +32,16 @@ export const Navbar: React.FC = () => {
         </button>
 
         <ul className={`nav__menu ${menuOpen ? 'open' : ''}`} id="nav-menu" role="list">
-          <li><ReactRouterDOM.Link to="/" onClick={() => setMenuOpen(false)}>Home</ReactRouterDOM.Link></li>
-          <li><ReactRouterDOM.Link to="/about" onClick={() => setMenuOpen(false)}>About</ReactRouterDOM.Link></li>
-          <li><ReactRouterDOM.Link to="/programs" onClick={() => setMenuOpen(false)}>Our work</ReactRouterDOM.Link></li>
-          <li><ReactRouterDOM.Link to="/get-involved" onClick={() => setMenuOpen(false)}>Get involved</ReactRouterDOM.Link></li>
+          {NAV_LINKS.map((link) => (
+            <li key={link.to}>
+              <ReactRouterDOM.Link to={link.to} onClick={() => setMenuOpen(false)}>
+                {link.label}
+              </ReactRouterDOM.Link>
+            </li>
+          ))}
           <li>
             <ReactRouterDOM.Link
-              to="/contact"
+              to="/get-involved"
               className="btn btn--accent"
               onClick={() => setMenuOpen(false)}
             >

@@ -4,57 +4,49 @@
     align-items: center;
     gap: var(--space-2);
     padding: 0.75em 1.5em;
-    background: var(--color-brand);
+    background: rgba(255,255,255,0.1);
     color: #fff;
-    border: 2px solid transparent;
+    border: 1px solid rgba(255,255,255,0.2);
     border-radius: var(--radius-sm);
     font-size: var(--text-sm);
     font-weight: 600;
     letter-spacing: 0.025em;
     cursor: pointer;
     text-decoration: none;
-    transition: background 200ms ease, transform 150ms ease, box-shadow 200ms ease;
+    transition: background 200ms ease, border-color 200ms ease;
   }
 
   .btn:hover {
-    background: var(--color-brand-dark);
-    transform: translateY(-1px);
-    box-shadow: var(--shadow-brand);
+    background: rgba(255,255,255,0.18);
+    border-color: rgba(255,255,255,0.35);
   }
 
-  .btn:active { transform: translateY(0); box-shadow: none; }
-  .btn:focus-visible { outline: 3px solid var(--color-brand); outline-offset: 3px; }
+  .btn:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 3px; }
 
   .btn--accent {
     background: var(--color-accent);
+    border-color: var(--color-accent);
   }
   .btn--accent:hover {
     background: var(--color-accent-mid);
+    border-color: var(--color-accent-mid);
   }
 
   .btn--ghost {
     background: transparent;
-    color: var(--color-brand);
-    border-color: currentColor;
+    border-color: transparent;
+    color: rgba(255,255,255,0.8);
   }
   .btn--ghost:hover {
-    background: var(--color-brand-light);
-    box-shadow: none;
-  }
-
-  .btn--light {
-    background: #fff;
-    color: var(--color-accent);
-  }
-  .btn--light:hover {
-    background: var(--color-accent-light);
-    box-shadow: none;
+    background: rgba(255,255,255,0.08);
+    border-color: transparent;
+    color: #fff;
   }
 
   .btn--outline {
     background: transparent;
-    color: #fff;
-    border-color: rgba(255,255,255,0.5);
+    color: rgba(255,255,255,0.8);
+    border-color: rgba(255,255,255,0.3);
   }
   .btn--outline:hover {
     background: rgba(255,255,255,0.1);

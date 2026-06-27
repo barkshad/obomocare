@@ -10,8 +10,8 @@
   }
 
   ::selection {
-    background: var(--color-brand-light);
-    color: var(--color-brand-dark);
+    background: var(--color-accent-light);
+    color: var(--color-brand);
   }
 
   .skip-link {
@@ -19,7 +19,7 @@
     top: -100%;
     left: var(--space-4);
     padding: var(--space-2) var(--space-4);
-    background: var(--color-brand);
+    background: var(--color-accent);
     color: #fff;
     z-index: 999;
     font-size: var(--text-sm);

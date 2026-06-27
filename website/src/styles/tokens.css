@@ -1,8 +1,8 @@
 :root {
-  --color-brand: #1A0FAB;
-  --color-brand-mid: #2D1FD4;
-  --color-brand-dark: #100969;
-  --color-brand-light: #E8E6FA;
+  --color-brand: #0A0A1A;
+  --color-brand-dark: #050510;
+  --color-brand-mid: #14142A;
+  --color-brand-light: #1E1E3A;
   --color-accent: #E8751A;
   --color-accent-mid: #D4650A;
   --color-accent-light: #FEF0E4;
@@ -15,11 +15,11 @@
   --ink-50: #F4F4F2;
   --ink-25: #FAFAF8;
 
-  --surface-primary: var(--ink-25);
-  --surface-elevated: #FFFFFF;
-  --surface-soft: var(--ink-50);
+  --surface-primary: var(--color-brand);
+  --surface-elevated: var(--color-brand-mid);
+  --surface-light: #F8F8FA;
+  --surface-white: #FFFFFF;
 
-  --font-display: 'Playfair Display', 'Georgia', serif;
   --font-body: 'Space Grotesk', system-ui, sans-serif;
   --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
 
@@ -54,7 +54,6 @@
   --shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
   --shadow-md: 0 4px 6px -2px rgba(0,0,0,0.05), 0 12px 24px -4px rgba(0,0,0,0.08);
   --shadow-lg: 0 8px 32px -8px rgba(0,0,0,0.12);
-  --shadow-brand: 0 8px 24px -6px color-mix(in srgb, var(--color-brand) 30%, transparent);
 
   --container: min(90rem, 100% - 3rem);
   --section-gap: clamp(4rem, 10vw, 10rem);

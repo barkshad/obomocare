@@ -13,7 +13,6 @@
   }
 
   .features-head h2 {
-    font-family: var(--font-display);
     font-size: var(--text-4xl);
     font-weight: 700;
     color: var(--ink-900);
@@ -44,8 +43,8 @@
   .feature-row:nth-child(even) .feature-row__visual { order: -1; }
 
   .feature-row__content h3 {
-    font-family: var(--font-display);
     font-size: var(--text-2xl);
+    font-weight: 600;
     color: var(--ink-900);
     margin-bottom: var(--space-4);
     line-height: 1.2;
@@ -59,7 +58,7 @@
 
   .feature-row__visual {
     aspect-ratio: 4/3;
-    background: var(--color-brand-light);
+    background: var(--surface-light);
     border-radius: var(--radius-md);
     display: flex;
     align-items: center;
@@ -68,17 +67,10 @@
     position: relative;
   }
 
-  .feature-row__visual::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(circle at 30% 50%, color-mix(in srgb, var(--color-brand) 10%, transparent) 0%, transparent 70%);
-  }
-
   .feature-row__visual svg {
     width: 60%;
     height: 60%;
-    opacity: 0.2;
+    opacity: 0.15;
     color: var(--color-brand);
   }
 
@@ -104,7 +96,6 @@
   .situation-item:first-child { border-top: 1px solid var(--ink-100); }
 
   .situation-item__num {
-    font-family: var(--font-display);
     font-size: var(--text-5xl);
     font-weight: 800;
     color: var(--color-accent);

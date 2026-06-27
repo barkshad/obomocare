@@ -12,18 +12,11 @@ interface LayoutProps {
 export const Layout: React.FC<LayoutProps> = ({ children }) => {
   const location = ReactRouterDOM.useLocation();
   const isAdmin = location.pathname.startsWith('/admin');
-  const { loading, content } = useContent();
+  const { loading } = useContent();
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location.pathname]);
-
-  useEffect(() => {
-    if (content.theme && content.theme.primaryColor) {
-      const root = document.documentElement;
-      root.style.setProperty('--color-brand', content.theme.primaryColor);
-    }
-  }, [content.theme]);
 
   if (loading && !isAdmin) {
     return <Loading />;
