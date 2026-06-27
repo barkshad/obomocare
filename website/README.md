@@ -10,7 +10,6 @@ OBOMOCARE is a registered Community Based Organisation serving vulnerable househ
 - Vite
 - Tailwind CSS
 - Firebase
-- Framer Motion
 - Recharts
 
 ## Getting Started
