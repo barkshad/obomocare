@@ -18,17 +18,6 @@ export const Home: React.FC = () => {
     { to: '/get-involved', label: 'Get involved', desc: 'Donate, volunteer, or partner. Pick what fits.' },
   ];
 
-  if (!content || !content.hero) {
-    return (
-      <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'var(--color-brand)' }}>
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem' }}>
-          <div style={{ width: 48, height: 48, border: '3px solid var(--color-accent)', borderTopColor: 'transparent', borderRadius: '50%', animation: 'spin 0.8s linear infinite' }}></div>
-          <p style={{ fontWeight: 700, color: 'var(--color-accent)' }}>Loading...</p>
-        </div>
-      </div>
-    );
-  }
-
   return (
     <>
       <section className="hero">
@@ -53,15 +42,13 @@ export const Home: React.FC = () => {
         </div>
       </section>
 
-      <section className="full-bleed" style={{ background: 'var(--color-brand-dark)' }}>
-        <div className="stats">
-          {stats.map((stat) => (
-            <div key={stat.id} className="stat">
-              <div className="stat__number">{Number(stat.value).toLocaleString()}{stat.suffix}</div>
-              <div className="stat__label">{stat.label}</div>
-            </div>
-          ))}
-        </div>
+      <section className="stats">
+        {stats.map((stat) => (
+          <div key={stat.id} className="stat">
+            <div className="stat__number">{Number(stat.value).toLocaleString()}{stat.suffix}</div>
+            <div className="stat__label">{stat.label}</div>
+          </div>
+        ))}
       </section>
 
       <section className="section" style={{ background: 'var(--surface-light)' }}>
@@ -87,25 +74,33 @@ export const Home: React.FC = () => {
         <div className="container">
           <div className="features-head" style={{ textAlign: 'center' }}>
             <div className="features-head__tag">Our pillars</div>
-            <h2 style={{ color: '#fff' }}>How we deliver care</h2>
+            <h2 style={{ color: '#0A0A1A' }}>How we deliver care</h2>
           </div>
           <div className="grid-auto">
             {content.programs.map((program) => (
               <ReactRouterDOM.Link
                 key={program.id}
                 to={`/programs/${program.id}`}
-                style={{ display: 'block', padding: 'var(--space-6)', background: 'var(--surface-elevated)', borderRadius: 'var(--radius-md)', border: '1px solid rgba(255,255,255,0.08)', textDecoration: 'none', transition: 'border-color 200ms ease' }}
-                onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.borderColor = 'var(--color-accent)'; }}
-                onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.borderColor = 'rgba(255,255,255,0.08)'; }}
+                style={{
+                  display: 'block',
+                  padding: 'var(--space-6)',
+                  background: 'var(--surface-elevated)',
+                  borderRadius: 'var(--radius-md)',
+                  border: '1px solid rgba(0,0,0,0.06)',
+                  textDecoration: 'none',
+                  transition: 'border-color 200ms ease',
+                }}
+                onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.borderColor = 'var(--color-secondary)'; }}
+                onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.borderColor = 'rgba(0,0,0,0.06)'; }}
               >
-                <img src={program.image} alt={program.title} style={{ width: '100%', height: '200px', objectFit: 'cover' }} />
+                <img src={program.image} alt={program.title} style={{ width: '100%', height: '200px', objectFit: 'cover', borderRadius: 'var(--radius-md) var(--radius-md) 0 0' }} />
                 <div className="card__body" style={{ padding: 'var(--space-6)' }}>
-                  <span style={{ display: 'inline-block', padding: 'var(--space-1) var(--space-3)', background: 'var(--color-accent)', color: '#fff', fontSize: 'var(--text-xs)', fontWeight: 600, borderRadius: 'var(--radius-pill)', marginBottom: 'var(--space-3)' }}>
+                  <span style={{ display: 'inline-block', padding: 'var(--space-1) var(--space-3)', background: 'var(--color-secondary)', color: '#0A0A1A', fontSize: 'var(--text-xs)', fontWeight: 600, borderRadius: 'var(--radius-pill)', marginBottom: 'var(--space-3)' }}>
                     {program.stats}
                   </span>
-                  <h3 className="card__title" style={{ color: '#fff' }}>{program.title}</h3>
-                  <p className="card__text" style={{ color: 'rgba(255,255,255,0.6)' }}>{program.description}</p>
-                  <span style={{ color: 'var(--color-accent)', fontSize: 'var(--text-sm)', fontWeight: 600, marginTop: 'var(--space-3)', display: 'inline-block' }}>
+                  <h3 className="card__title" style={{ color: '#0A0A1A' }}>{program.title}</h3>
+                  <p style={{ color: 'rgba(0,0,0,0.6)', fontSize: 'var(--text-sm)', lineHeight: 1.6, marginBottom: 'var(--space-3)' }}>{program.description}</p>
+                  <span style={{ color: 'var(--color-secondary)', fontSize: 'var(--text-sm)', fontWeight: 600, display: 'inline-block' }}>
                     Learn more &rarr;
                   </span>
                 </div>
@@ -129,12 +124,12 @@ export const Home: React.FC = () => {
                 className="card"
                 style={{ textDecoration: 'none' }}
               >
-                <img src={story.image} alt={story.title} style={{ width: '100%', height: '200px', objectFit: 'cover' }} />
+                <img src={story.image} alt={story.title} style={{ width: '100%', height: '200px', objectFit: 'cover', borderRadius: 'var(--radius-md) var(--radius-md) 0 0' }} />
                 <div className="card__body">
                   <div className="card__tag">{story.category}</div>
                   <h3 className="card__title">{story.title}</h3>
                   <p className="card__text">{story.excerpt}</p>
-                  <span style={{ color: 'var(--color-accent)', fontSize: 'var(--text-sm)', fontWeight: 600, marginTop: 'var(--space-3)', display: 'inline-block' }}>
+                  <span style={{ color: 'var(--color-secondary)', fontSize: 'var(--text-sm)', fontWeight: 600, marginTop: 'var(--space-3)', display: 'inline-block' }}>
                     Read story &rarr;
                   </span>
                 </div>

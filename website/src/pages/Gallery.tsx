@@ -16,11 +16,11 @@ export const Gallery: React.FC = () => {
   }, [content.gallery, filter]);
 
   return (
-    <div className="section" style={{ background: 'var(--surface-primary)', paddingTop: '6rem' }}>
+    <div className="section" style={{ background: '#FFFFFF', paddingTop: '6rem' }}>
       <div className="container">
         <div className="features-head" style={{ textAlign: 'center' }}>
           <div className="features-head__tag">Gallery</div>
-          <h1 style={{ fontSize: 'var(--text-5xl)', fontWeight: 700, color: '#fff', marginBottom: 'var(--space-4)' }}>
+          <h1 style={{ fontSize: 'var(--text-5xl)', fontWeight: 700, color: '#0A0A1A', marginBottom: 'var(--space-4)' }}>
             Our Gallery
           </h1>
         </div>
@@ -31,7 +31,7 @@ export const Gallery: React.FC = () => {
               key={cat}
               onClick={() => setFilter(cat)}
               className={filter === cat ? 'btn btn--accent' : 'btn'}
-              style={filter !== cat ? { background: 'rgba(255,255,255,0.06)', borderColor: 'transparent' } : {}}
+              style={filter !== cat ? { background: 'rgba(0,0,0,0.04)', borderColor: 'transparent' } : {}}
             >
               {cat}
             </button>
@@ -42,17 +42,17 @@ export const Gallery: React.FC = () => {
           {filteredItems.map((item) => (
             <div
               key={item.id}
-              style={{ aspectRatio: '1', borderRadius: 'var(--radius-md)', overflow: 'hidden', cursor: 'pointer', background: 'var(--surface-elevated)', position: 'relative' }}
+              style={{ aspectRatio: '1', borderRadius: 'var(--radius-md)', overflow: 'hidden', cursor: 'pointer', background: 'var(--surface-light)', position: 'relative' }}
               onClick={() => setSelectedItem(item)}
             >
               {item.type === 'video' ? (
                 <div style={{ width: '100%', height: '100%', position: 'relative', background: '#000' }}>
                   <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', pointerEvents: 'none' }}>
-                    <div style={{ width: 48, height: 48, background: 'rgba(255,255,255,0.2)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                      <Play size={20} style={{ color: '#fff', marginLeft: 2 }} />
+                    <div style={{ width: 48, height: 48, background: 'rgba(0,0,0,0.15)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                      <Play size={20} style={{ color: '#0A0A1A', marginLeft: 2 }} />
                     </div>
                   </div>
-                  <div style={{ position: 'absolute', top: 'var(--space-3)', left: 'var(--space-3)', background: 'rgba(0,0,0,0.6)', color: '#fff', padding: '2px 8px', borderRadius: '4px', fontSize: 'var(--text-xs)', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '4px' }}>
+                  <div style={{ position: 'absolute', top: 'var(--space-3)', left: 'var(--space-3)', background: 'rgba(0,0,0,0.6)', color: '#0A0A1A', padding: '2px 8px', borderRadius: '4px', fontSize: 'var(--text-xs)', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '4px' }}>
                     <Film size={10} /> Video
                   </div>
                 </div>
@@ -63,7 +63,7 @@ export const Gallery: React.FC = () => {
                 onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = 'rgba(10,10,26,0.6)'; (e.currentTarget as HTMLElement).style.opacity = '1'; }}
                 onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = 'rgba(10,10,26,0)'; (e.currentTarget as HTMLElement).style.opacity = '0'; }}
               >
-                <div style={{ textAlign: 'center', color: '#fff' }}>
+                <div style={{ textAlign: 'center', color: '#0A0A1A' }}>
                   <ZoomIn size={24} style={{ margin: '0 auto var(--space-2)' }} />
                   <span style={{ fontWeight: 600, fontSize: 'var(--text-xs)', textTransform: 'uppercase' }}>{item.category}</span>
                 </div>
@@ -79,7 +79,7 @@ export const Gallery: React.FC = () => {
           onClick={() => setSelectedItem(null)}
         >
           <button
-            style={{ position: 'absolute', top: 'var(--space-6)', right: 'var(--space-6)', background: 'none', border: 'none', cursor: 'pointer', color: '#fff', padding: 'var(--space-2)' }}
+            style={{ position: 'absolute', top: 'var(--space-6)', right: 'var(--space-6)', background: 'none', border: 'none', cursor: 'pointer', color: '#0A0A1A', padding: 'var(--space-2)' }}
             onClick={() => setSelectedItem(null)}
           >
             <X size={24} />

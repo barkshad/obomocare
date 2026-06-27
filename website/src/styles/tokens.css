@@ -1,19 +1,18 @@
+@import "tailwindcss";
+
 :root {
   --color-brand: #0A0A1A;
   --color-brand-dark: #050510;
   --color-brand-mid: #14142A;
   --color-brand-light: #1E1E3A;
+
+  --color-secondary: #2563EB;
+  --color-secondary-mid: #1D4ED8;
+  --color-secondary-light: #DBEAFE;
+
   --color-accent: #E8751A;
   --color-accent-mid: #D4650A;
   --color-accent-light: #FEF0E4;
-
-  --ink-900: #0D0D0D;
-  --ink-700: #2D2D2D;
-  --ink-500: #6B6B6B;
-  --ink-300: #ABABAB;
-  --ink-100: #E1E1DF;
-  --ink-50: #F4F4F2;
-  --ink-25: #FAFAF8;
 
   --surface-primary: var(--color-brand);
   --surface-elevated: var(--color-brand-mid);

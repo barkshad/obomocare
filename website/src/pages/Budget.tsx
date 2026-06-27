@@ -11,14 +11,14 @@ export const Budget: React.FC = () => {
   ];
 
   return (
-    <div className="section" style={{ background: 'var(--surface-primary)', paddingTop: '6rem' }}>
+    <div className="section" style={{ background: '#FFFFFF', paddingTop: '6rem' }}>
       <div className="container">
         <div className="features-head" style={{ textAlign: 'center' }}>
           <div className="features-head__tag">Budget</div>
-          <h1 style={{ fontSize: 'var(--text-5xl)', fontWeight: 700, color: '#fff', marginBottom: 'var(--space-4)' }}>
+          <h1 style={{ fontSize: 'var(--text-5xl)', fontWeight: 700, color: '#0A0A1A', marginBottom: 'var(--space-4)' }}>
             USD 1,801,697 over 24 months
           </h1>
-          <p style={{ color: 'rgba(255,255,255,0.55)', maxWidth: '48ch', marginInline: 'auto', lineHeight: 1.7 }}>
+          <p style={{ color: 'rgba(0,0,0,0.55)', maxWidth: '48ch', marginInline: 'auto', lineHeight: 1.7 }}>
             OBOMOCARE has operated for five years without a single dollar of international funding. We ask to be supported to scale what already works.
           </p>
         </div>
@@ -45,15 +45,15 @@ export const Budget: React.FC = () => {
         </div>
 
 <div style={{ marginTop: 'var(--space-12)', padding: 'var(--space-10)', background: 'var(--color-accent)', borderRadius: 'var(--radius-md)', textAlign: 'center' }}>
-  <h3 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, color: '#fff', marginBottom: 'var(--space-4)' }}>
+  <h3 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, color: '#0A0A1A', marginBottom: 'var(--space-4)' }}>
     Back this proposal
   </h3>
-  <p style={{ color: 'rgba(255,255,255,0.88)', marginBottom: 'var(--space-6)', lineHeight: 1.7, maxWidth: '40ch', marginInline: 'auto' }}>
+  <p style={{ color: 'rgba(0,0,0,0.88)', marginBottom: 'var(--space-6)', lineHeight: 1.7, maxWidth: '40ch', marginInline: 'auto' }}>
     One thousand five hundred households are waiting for this programme to begin. Every dollar is tracked and published.
   </p>
   <a href="/get-involved" className="btn btn--light">Support this proposal</a>
-  <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: 'var(--text-sm)', marginTop: 'var(--space-4)' }}>
-    Full proposal available on request — <a href="mailto:obomocare@gmail.com?subject=Proposal request" style={{ color: '#fff', textDecoration: 'underline' }}>email us</a>
+  <p style={{ color: 'rgba(0,0,0,0.7)', fontSize: 'var(--text-sm)', marginTop: 'var(--space-4)' }}>
+    Full proposal available on request — <a href="mailto:obomocare@gmail.com?subject=Proposal request" style={{ color: '#0A0A1A', textDecoration: 'underline' }}>email us</a>
   </p>
 </div>
       </div>

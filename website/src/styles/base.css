@@ -4,14 +4,14 @@
   }
 
   body {
-    color: var(--ink-700);
+    color: #0A0A1A;
     background: var(--surface-primary);
     font-size: var(--text-base);
   }
 
   ::selection {
-    background: var(--color-accent-light);
-    color: var(--color-brand);
+    background: var(--color-secondary-light);
+    color: #0A0A1A;
   }
 
   .skip-link {
@@ -19,7 +19,7 @@
     top: -100%;
     left: var(--space-4);
     padding: var(--space-2) var(--space-4);
-    background: var(--color-accent);
+    background: var(--color-secondary);
     color: #fff;
     z-index: 999;
     font-size: var(--text-sm);

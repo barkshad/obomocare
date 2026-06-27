@@ -89,16 +89,22 @@ export const ContentProvider: React.FC<{ children: ReactNode }> = ({ children })
 
   const isDemoMode = !FIREBASE_CONFIG.apiKey || FIREBASE_CONFIG.apiKey === "YOUR_API_KEY_HERE";
 
-  useEffect(() => {
-    if (isDemoMode) {
-      console.log("No valid Firebase config detected. Running in offline mode using LocalStorage.");
-      setLoading(false);
-      return;
-    }
+useEffect(() => {
+  if (isDemoMode) {
+    console.log("No valid Firebase config detected. Running in offline mode using LocalStorage.");
+    setLoading(false);
+    return;
+  }
 
-    const docRef = doc(db, 'website_content', 'main_v1');
-    
-    const unsubscribe = onSnapshot(docRef, (docSnap) => {
+  const docRef = doc(db, 'website_content', 'main_v1');
+
+  const timeoutId = setTimeout(() => {
+    console.warn("Firestore connection timeout — loading from local data.");
+    setLoading(false);
+  }, 5000);
+
+  const unsubscribe = onSnapshot(docRef, (docSnap) => {
+    clearTimeout(timeoutId);
       if (docSnap.exists()) {
         const data = docSnap.data();
         

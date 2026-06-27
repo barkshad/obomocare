@@ -24,20 +24,20 @@ export const Impact: React.FC = () => {
   const { content } = useContent();
 
   return (
-    <div className="section" style={{ background: 'var(--surface-primary)', paddingTop: '6rem' }}>
+    <div className="section" style={{ background: '#FFFFFF', paddingTop: '6rem' }}>
       <div className="container">
 
         <div className="features-head" style={{ textAlign: 'center' }}>
           <div className="features-head__tag">Impact</div>
-          <h1 style={{ fontSize: 'var(--text-5xl)', fontWeight: 700, color: '#fff', marginBottom: 'var(--space-4)' }}>
+          <h1 style={{ fontSize: 'var(--text-5xl)', fontWeight: 700, color: '#0A0A1A', marginBottom: 'var(--space-4)' }}>
             Our Impact
           </h1>
-          <p style={{ color: 'rgba(255,255,255,0.55)', maxWidth: '40ch', marginInline: 'auto', lineHeight: 1.7 }}>
+          <p style={{ color: 'rgba(0,0,0,0.55)', maxWidth: '40ch', marginInline: 'auto', lineHeight: 1.7 }}>
             Five years. Zero international funding. Every number is a real household.
           </p>
         </div>
 
-        <div className="stats" style={{ borderTop: '1px solid rgba(255,255,255,0.08)', borderBottom: '1px solid rgba(255,255,255,0.08)', marginBottom: 'var(--space-16)' }}>
+        <div className="stats" style={{ borderTop: '1px solid rgba(0,0,0,0.06)', borderBottom: '1px solid rgba(0,0,0,0.06)', marginBottom: 'var(--space-16)' }}>
           {[
             { num: '2,000+', label: 'Families served since 2020' },
             { num: '5 yrs', label: 'Community-funded' },
@@ -54,23 +54,23 @@ export const Impact: React.FC = () => {
         <div style={{ marginBottom: 'var(--space-16)' }}>
           <div className="features-head" style={{ textAlign: 'center', marginBottom: 'var(--space-12)' }}>
             <div className="features-head__tag">Evidence</div>
-            <h2 style={{ fontSize: 'var(--text-4xl)', fontWeight: 700, color: '#fff', marginBottom: 'var(--space-4)' }}>
+            <h2 style={{ fontSize: 'var(--text-4xl)', fontWeight: 700, color: '#0A0A1A', marginBottom: 'var(--space-4)' }}>
               What the numbers show
             </h2>
           </div>
 
           <div style={{
             padding: 'var(--space-10)',
-            background: 'var(--surface-elevated)',
+            background: 'var(--surface-light)',
             borderRadius: 'var(--radius-md)',
-            border: '1px solid rgba(255,255,255,0.08)',
+            border: '1px solid rgba(0,0,0,0.06)',
           }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 'var(--space-8)' }}>
               <div>
-                <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 600, color: '#fff', marginBottom: 'var(--space-2)' }}>
+                <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 600, color: '#0A0A1A', marginBottom: 'var(--space-2)' }}>
                   Households supported over time
                 </h3>
-                <p style={{ color: 'rgba(255,255,255,0.55)', fontSize: 'var(--text-sm)' }}>
+                <p style={{ color: 'rgba(0,0,0,0.55)', fontSize: 'var(--text-sm)' }}>
                   Cumulative count through to end 2025
                 </p>
               </div>
@@ -78,7 +78,7 @@ export const Impact: React.FC = () => {
                 padding: 'var(--space-3) var(--space-5)',
                 background: 'var(--color-accent)',
                 borderRadius: 'var(--radius-sm)',
-                color: '#fff',
+                color: '#0A0A1A',
                 fontWeight: 700,
                 fontSize: 'var(--text-2xl)',
                 lineHeight: 1,
@@ -90,7 +90,7 @@ export const Impact: React.FC = () => {
             <div style={{ width: '100%', height: 320 }}>
               <ResponsiveContainer width="100%" height="100%">
                 <BarChart data={yearData} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
-                  <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.06)" />
+                  <CartesianGrid strokeDasharray="3 3" stroke="rgba(0,0,0,0.04)" />
                   <XAxis
                     dataKey="year"
                     stroke="rgba(255,255,255,0.3)"
@@ -109,12 +109,12 @@ export const Impact: React.FC = () => {
                     cursor={{ fill: 'rgba(232,117,26,0.08)' }}
                     contentStyle={{
                       background: '#14142A',
-                      border: '1px solid rgba(255,255,255,0.08)',
+                      border: '1px solid rgba(0,0,0,0.06)',
                       borderRadius: '8px',
-                      color: '#fff',
+                      color: '#0A0A1A',
                       fontSize: '13px',
                     }}
-                    labelStyle={{ color: 'rgba(255,255,255,0.6)', marginBottom: '4px' }}
+                    labelStyle={{ color: 'rgba(0,0,0,0.6)', marginBottom: '4px' }}
                     formatter={(value: number) => [`${value} households`, 'Cumulative']}
                   />
                   <Bar
@@ -146,7 +146,7 @@ export const Impact: React.FC = () => {
         <div style={{ marginBottom: 'var(--space-16)' }}>
           <div className="features-head" style={{ textAlign: 'center', marginBottom: 'var(--space-12)' }}>
             <div className="features-head__tag">Our journey</div>
-            <h2 style={{ fontSize: 'var(--text-4xl)', fontWeight: 700, color: '#fff', marginBottom: 'var(--space-4)' }}>
+            <h2 style={{ fontSize: 'var(--text-4xl)', fontWeight: 700, color: '#0A0A1A', marginBottom: 'var(--space-4)' }}>
               Key milestones
             </h2>
           </div>
@@ -158,7 +158,7 @@ export const Impact: React.FC = () => {
               top: 8,
               bottom: 8,
               width: 2,
-              background: 'rgba(255,255,255,0.08)',
+              background: 'rgba(0,0,0,0.06)',
             }} />
             {milestones.map((m, i) => (
               <div
@@ -177,13 +177,13 @@ export const Impact: React.FC = () => {
                   height: 16,
                   borderRadius: '50%',
                   background: i === milestones.length - 1 ? 'var(--color-accent)' : 'var(--surface-elevated)',
-                  border: `2px solid ${i === milestones.length - 1 ? 'var(--color-accent)' : 'rgba(255,255,255,0.2)'}`,
+                  border: `2px solid ${i === milestones.length - 1 ? 'var(--color-accent)' : 'rgba(0,0,0,0.15)'}`,
                 }} />
                 <div>
                   <div style={{
                     display: 'inline-block',
                     padding: '2px var(--space-3)',
-                    background: 'rgba(255,255,255,0.06)',
+                    background: 'rgba(0,0,0,0.04)',
                     borderRadius: 'var(--radius-pill)',
                     fontSize: 'var(--text-xs)',
                     fontWeight: 600,
@@ -193,10 +193,10 @@ export const Impact: React.FC = () => {
                   }}>
                     {m.year}
                   </div>
-                  <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 600, color: '#fff', marginBottom: 'var(--space-2)' }}>
+                  <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 600, color: '#0A0A1A', marginBottom: 'var(--space-2)' }}>
                     {m.label}
                   </h3>
-                  <p style={{ fontSize: 'var(--text-sm)', color: 'rgba(255,255,255,0.6)', lineHeight: 1.7, maxWidth: '52ch' }}>
+                  <p style={{ fontSize: 'var(--text-sm)', color: 'rgba(0,0,0,0.6)', lineHeight: 1.7, maxWidth: '52ch' }}>
                     {m.detail}
                   </p>
                 </div>
@@ -205,8 +205,8 @@ export const Impact: React.FC = () => {
           </div>
         </div>
 
-        <div style={{ padding: 'var(--space-12)', background: 'var(--surface-elevated)', borderRadius: 'var(--radius-md)', border: '1px solid rgba(255,255,255,0.08)', textAlign: 'center' }}>
-          <p style={{ fontSize: 'var(--text-lg)', color: 'rgba(255,255,255,0.72)', lineHeight: 1.6, maxWidth: '40ch', marginInline: 'auto', marginBottom: 'var(--space-6)' }}>
+        <div style={{ padding: 'var(--space-12)', background: 'var(--surface-light)', borderRadius: 'var(--radius-md)', border: '1px solid rgba(0,0,0,0.06)', textAlign: 'center' }}>
+          <p style={{ fontSize: 'var(--text-lg)', color: 'rgba(0,0,0,0.72)', lineHeight: 1.6, maxWidth: '40ch', marginInline: 'auto', marginBottom: 'var(--space-6)' }}>
             We have not measured our impact on depression scores yet. We plan to start in 2026.
           </p>
           <a href="/get-involved" className="btn btn--accent">

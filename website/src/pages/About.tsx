@@ -6,54 +6,54 @@ export const About: React.FC = () => {
   const { content } = useContent();
 
   return (
-    <div className="section" style={{ background: 'var(--surface-primary)', paddingTop: '6rem' }}>
+    <div className="section" style={{ background: '#FFFFFF', paddingTop: '6rem' }}>
       <div className="container">
 
         <div className="features-head" style={{ textAlign: 'center' }}>
           <div className="features-head__tag">Who we are</div>
-          <h1 style={{ fontSize: 'var(--text-5xl)', fontWeight: 700, color: '#fff' }}>
+          <h1 style={{ fontSize: 'var(--text-5xl)', fontWeight: 700, color: '#0A0A1A' }}>
             About OBOMOCARE
           </h1>
         </div>
 
         <div className="split-layout" style={{ marginBottom: 'var(--space-16)' }}>
-          <div style={{ padding: 'var(--space-10)', background: 'var(--surface-elevated)', borderRadius: 'var(--radius-md)' }}>
+          <div style={{ padding: 'var(--space-10)', background: 'var(--surface-light)', border: '1px solid rgba(0,0,0,0.06)', borderRadius: 'var(--radius-md)' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-3)', marginBottom: 'var(--space-5)' }}>
               <svg viewBox="0 0 40 40" width="32" height="32"><path d="M20 4 C14 10 12 26 20 34 C28 26 26 10 20 4 Z" fill="var(--color-accent)" /></svg>
-              <h2 style={{ fontSize: 'var(--text-2xl)', fontWeight: 600, color: '#fff', marginBottom: 0 }}>Our Mission</h2>
+              <h2 style={{ fontSize: 'var(--text-2xl)', fontWeight: 600, color: '#0A0A1A', marginBottom: 0 }}>Our Mission</h2>
             </div>
-            <p style={{ fontSize: 'var(--text-base)', color: 'rgba(255,255,255,0.72)', lineHeight: 1.7 }}>{content.about.mission}</p>
+            <p style={{ fontSize: 'var(--text-base)', color: 'rgba(0,0,0,0.72)', lineHeight: 1.7 }}>{content.about.mission}</p>
           </div>
-          <div style={{ padding: 'var(--space-10)', background: 'var(--surface-elevated)', borderRadius: 'var(--radius-md)' }}>
+          <div style={{ padding: 'var(--space-10)', background: 'var(--surface-light)', border: '1px solid rgba(0,0,0,0.06)', borderRadius: 'var(--radius-md)' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-3)', marginBottom: 'var(--space-5)' }}>
               <svg viewBox="0 0 40 40" width="32" height="32"><path d="M20 4 C14 10 12 26 20 34 C28 26 26 10 20 4 Z" fill="var(--color-accent)" /></svg>
-              <h2 style={{ fontSize: 'var(--text-2xl)', fontWeight: 600, color: '#fff', marginBottom: 0 }}>Our Vision</h2>
+              <h2 style={{ fontSize: 'var(--text-2xl)', fontWeight: 600, color: '#0A0A1A', marginBottom: 0 }}>Our Vision</h2>
             </div>
-            <p style={{ fontSize: 'var(--text-base)', color: 'rgba(255,255,255,0.72)', lineHeight: 1.7 }}>{content.about.vision}</p>
+            <p style={{ fontSize: 'var(--text-base)', color: 'rgba(0,0,0,0.72)', lineHeight: 1.7 }}>{content.about.vision}</p>
           </div>
         </div>
 
-        <div style={{ display: 'flex', gap: 'var(--space-10)', alignItems: 'flex-start', background: 'var(--surface-elevated)', borderRadius: 'var(--radius-md)', padding: 'var(--space-10)', marginBottom: 'var(--space-16)', border: '1px solid rgba(255,255,255,0.08)' }}>
+        <div style={{ display: 'flex', gap: 'var(--space-10)', alignItems: 'flex-start', background: 'var(--surface-light)', border: '1px solid rgba(0,0,0,0.06)', borderRadius: 'var(--radius-md)', padding: 'var(--space-10)', marginBottom: 'var(--space-16)', border: '1px solid rgba(0,0,0,0.06)' }}>
           {content.about.founderImage && (
             <div style={{ flexShrink: 0 }}>
               <img
                 src={content.about.founderImage}
                 alt="Founder"
-                style={{ width: '220px', height: '220px', objectFit: 'cover', borderRadius: 'var(--radius-md)', border: '2px solid rgba(255,255,255,0.08)' }}
+                style={{ width: '220px', height: '220px', objectFit: 'cover', borderRadius: 'var(--radius-md)', border: '2px solid rgba(0,0,0,0.06)' }}
               />
             </div>
           )}
           <div>
-            <div style={{ display: 'inline-block', padding: 'var(--space-1) var(--space-3)', background: 'var(--color-accent)', color: '#fff', fontSize: 'var(--text-xs)', fontWeight: 600, borderRadius: 'var(--radius-pill)', marginBottom: 'var(--space-4)' }}>
+            <div style={{ display: 'inline-block', padding: 'var(--space-1) var(--space-3)', background: 'var(--color-accent)', color: '#0A0A1A', fontSize: 'var(--text-xs)', fontWeight: 600, borderRadius: 'var(--radius-pill)', marginBottom: 'var(--space-4)' }}>
               Our founder's story
             </div>
-            <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 600, color: '#fff', marginBottom: 'var(--space-4)', lineHeight: 1.3 }}>
+            <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 600, color: '#0A0A1A', marginBottom: 'var(--space-4)', lineHeight: 1.3 }}>
               From a single neighbour to a movement
             </h3>
-            <p style={{ fontSize: 'var(--text-base)', color: 'rgba(255,255,255,0.72)', lineHeight: 1.8, marginBottom: 'var(--space-6)' }}>
+            <p style={{ fontSize: 'var(--text-base)', color: 'rgba(0,0,0,0.72)', lineHeight: 1.8, marginBottom: 'var(--space-6)' }}>
               {content.about.founderStory}
             </p>
-            <div style={{ borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: 'var(--space-6)', display: 'flex', alignItems: 'center', gap: 'var(--space-4)' }}>
+            <div style={{ borderTop: '1px solid rgba(0,0,0,0.08)', paddingTop: 'var(--space-6)', display: 'flex', alignItems: 'center', gap: 'var(--space-4)' }}>
               <svg viewBox="0 0 40 40" width="28" height="28"><path d="M20 4 C14 10 12 26 20 34 C28 26 26 10 20 4 Z" fill="var(--color-accent)" opacity="0.7" /></svg>
               <div>
                 <div style={{ fontSize: 'var(--text-xs)', opacity: 0.6, marginBottom: 'var(--space-1)' }}>Motto</div>
@@ -66,10 +66,10 @@ export const About: React.FC = () => {
         <div style={{ marginBottom: 'var(--space-16)' }}>
           <div className="features-head" style={{ textAlign: 'center' }}>
             <div className="features-head__tag">What guides us</div>
-            <h2 style={{ fontSize: 'var(--text-4xl)', fontWeight: 700, color: '#fff', marginBottom: 'var(--space-4)' }}>
+            <h2 style={{ fontSize: 'var(--text-4xl)', fontWeight: 700, color: '#0A0A1A', marginBottom: 'var(--space-4)' }}>
               Our Core Values
             </h2>
-            <p style={{ color: 'rgba(255,255,255,0.55)', maxWidth: '40ch', marginInline: 'auto', lineHeight: 1.7 }}>
+            <p style={{ color: 'rgba(0,0,0,0.55)', maxWidth: '40ch', marginInline: 'auto', lineHeight: 1.7 }}>
               Principles that shape every decision we make and every visit we carry out.
             </p>
           </div>
@@ -82,9 +82,9 @@ export const About: React.FC = () => {
                   borderRadius: 'var(--radius-md)',
                   fontWeight: 600,
                   fontSize: 'var(--text-sm)',
-                  background: 'var(--surface-elevated)',
-                  color: 'rgba(255,255,255,0.85)',
-                  border: '1px solid rgba(255,255,255,0.1)',
+                  background: 'var(--surface-light)', border: '1px solid rgba(0,0,0,0.06)',
+                  color: '#0A0A1A',
+                  border: '1px solid rgba(0,0,0,0.08)',
                   maxWidth: '20rem',
                   lineHeight: 1.5,
                   textAlign: 'center',
@@ -96,16 +96,16 @@ export const About: React.FC = () => {
           </div>
         </div>
 
-        <div style={{ padding: 'var(--space-16)', background: 'var(--surface-elevated)', borderRadius: 'var(--radius-md)', border: '1px solid rgba(255,255,255,0.08)', textAlign: 'center' }}>
+        <div style={{ padding: 'var(--space-16)', background: 'var(--surface-light)', border: '1px solid rgba(0,0,0,0.06)', borderRadius: 'var(--radius-md)', border: '1px solid rgba(0,0,0,0.06)', textAlign: 'center' }}>
           <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 'var(--space-6)' }}>
             <div style={{ padding: 'var(--space-3)', background: 'var(--color-accent)', borderRadius: 'var(--radius-md)' }}>
               <svg viewBox="0 0 40 40" width="28" height="28"><path d="M20 4 C14 10 12 26 20 34 C28 26 26 10 20 4 Z" fill="white" opacity="0.95" /></svg>
             </div>
           </div>
-          <h3 style={{ fontSize: 'var(--text-3xl)', fontWeight: 700, color: '#fff', marginBottom: 'var(--space-4)' }}>
+          <h3 style={{ fontSize: 'var(--text-3xl)', fontWeight: 700, color: '#0A0A1A', marginBottom: 'var(--space-4)' }}>
             Join our mission
           </h3>
-          <p style={{ color: 'rgba(255,255,255,0.65)', maxWidth: '42ch', margin: '0 auto var(--space-8)', lineHeight: 1.7 }}>
+          <p style={{ color: 'rgba(0,0,0,0.65)', maxWidth: '42ch', margin: '0 auto var(--space-8)', lineHeight: 1.7 }}>
             Whether you volunteer, donate, or spread the word, your support helps us close the gaps that leave vulnerable households behind.
           </p>
           <div style={{ display: 'flex', gap: 'var(--space-4)', justifyContent: 'center', flexWrap: 'wrap' }}>
