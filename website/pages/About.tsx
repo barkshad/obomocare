@@ -1,81 +1,67 @@
 import React from 'react';
 import { useContent } from '../contexts/ContentContext';
 import * as ReactRouterDOM from 'react-router-dom';
-import { Users, Shield, Settings, BarChart3, Banknote, Gavel, ArrowRight } from 'lucide-react';
-import { BRAND } from '../brand';
+import { Users, Shield, Settings, BarChart3, Banknote, Gavel } from 'lucide-react';
+
+const governanceCards = [
+  { id: 'ga', icon: Users, title: 'General Assembly', desc: 'Supreme decision-making organ. All registered members in good standing. Adopts constitution, elects trustees, approves annual accounts.', badge: 'Supreme organ' },
+  { id: 'bt', icon: Shield, title: 'Board of Trustees', desc: 'Five to nine members elected for 3-year terms. Responsible for strategic direction, financial oversight, legal compliance.', badge: 'Meets quarterly' },
+  { id: 'ec', icon: Settings, title: 'Executive Committee', desc: 'Nine elected officers including Chairperson, Secretary, Treasurer, Programmes Officer, Volunteer Coordinator, Community Liaison Officer.', badge: 'Meets monthly' },
+  { id: 'pc', icon: BarChart3, title: 'Programmes Committee', desc: 'Oversight and strategic guidance on all four programme pillars. Submits quarterly programme reports to the Board of Trustees.', badge: 'Oversight body' },
+  { id: 'fa', icon: Banknote, title: 'Finance and Audit Committee', desc: 'Reviews all financial statements before Board presentation. Annual external audit by independent qualified auditor.', badge: 'Annual audit' },
+  { id: 'dc', icon: Gavel, title: 'Disciplinary Committee', desc: 'Independent body handling all disciplinary matters. No Executive Committee member may sit on it.', badge: 'Independent' },
+];
 
 export const About: React.FC = () => {
   const { content } = useContent();
 
-  const orgCards = [
-    { icon: Users, title: 'General Assembly', desc: 'Supreme decision-making organ. All registered members in good standing. Adopts constitution, elects trustees, approves annual accounts.', badge: 'Supreme organ' },
-    { icon: Shield, title: 'Board of Trustees', desc: 'Five to nine members elected for 3-year terms. Responsible for strategic direction, financial oversight, and ensuring legal compliance.', badge: 'Meets quarterly' },
-    { icon: Settings, title: 'Executive Committee', desc: 'Nine elected officers including Chairperson, Secretary, Treasurer, Programmes Officer, Volunteer Coordinator, and Community Liaison Officer.', badge: 'Meets monthly' },
-    { icon: BarChart3, title: 'Programmes Committee', desc: 'Oversight and strategic guidance on all four programme pillars. Submits quarterly programme reports to the Board of Trustees.', badge: 'Oversight body' },
-    { icon: Banknote, title: 'Finance and Audit Committee', desc: 'Reviews all financial statements before Board presentation. Annual external audit by independent qualified auditor. Full financial transparency to all donors.', badge: 'Annual audit' },
-    { icon: Gavel, title: 'Disciplinary Committee', desc: 'Independent body handling all disciplinary matters. No Executive Committee member may sit on it. Operates free from interference by any other organ.', badge: 'Independent' },
-  ];
-
   return (
-    <div className="pt-24 pb-16" style={{ backgroundColor: '#fff' }}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="section" style={{ background: 'var(--surface-elevated)', paddingTop: '6rem' }}>
+      <div className="container">
         {/* Header */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 py-2 px-5 rounded-full mb-6" style={{ backgroundColor: BRAND.orangeLight, color: BRAND.orange }}>
-            <span className="w-2 h-2 rounded-full" style={{ backgroundColor: BRAND.orange }}></span>
-            Who we are
-          </div>
-          <h1 className="font-serif text-5xl font-bold text-slate-900 mb-6">About OBOMOCARE</h1>
-          <div className="w-24 h-1 mx-auto rounded-full" style={{ backgroundColor: BRAND.orange }}></div>
+        <div className="features-head" style={{ textAlign: 'center' }}>
+          <div className="features-head__tag">Who we are</div>
+          <h1 style={{ fontFamily: 'var(--font-display)', fontSize: 'var(--text-5xl)', fontWeight: 700, color: 'var(--ink-900)' }}>
+            About OBOMOCARE
+          </h1>
         </div>
 
         {/* Mission & Vision */}
-        <div className="grid md:grid-cols-2 gap-12 mb-24">
-          <div
-            className="p-10 rounded-3xl border"
-            style={{ backgroundColor: BRAND.blueLight, borderColor: `${BRAND.blue}20` }}
-          >
-            <h2 className="font-serif text-3xl font-bold mb-6" style={{ color: BRAND.blue }}>Our Mission</h2>
-            <p className="text-lg text-slate-700 leading-relaxed">{content.about.mission}</p>
+        <div className="split-layout" style={{ marginBottom: 'var(--space-16)' }}>
+          <div className="card" style={{ padding: 'var(--space-10)', background: 'var(--color-brand-light)', borderColor: 'transparent' }}>
+            <h2 style={{ fontFamily: 'var(--font-display)', fontSize: 'var(--text-2xl)', color: 'var(--color-brand)', marginBottom: 'var(--space-4)' }}>Our Mission</h2>
+            <p style={{ fontSize: 'var(--text-base)', color: 'var(--ink-700)', lineHeight: 1.7 }}>{content.about.mission}</p>
           </div>
-          <div
-            className="p-10 rounded-3xl border border-slate-100 shadow-xl"
-            style={{ backgroundColor: '#fff' }}
-          >
-            <h2 className="font-serif text-3xl font-bold mb-6" style={{ color: BRAND.blue }}>Our Vision</h2>
-            <p className="text-lg text-slate-700 leading-relaxed">{content.about.vision}</p>
+          <div className="card" style={{ padding: 'var(--space-10)' }}>
+            <h2 style={{ fontFamily: 'var(--font-display)', fontSize: 'var(--text-2xl)', color: 'var(--color-brand)', marginBottom: 'var(--space-4)' }}>Our Vision</h2>
+            <p style={{ fontSize: 'var(--text-base)', color: 'var(--ink-700)', lineHeight: 1.7 }}>{content.about.vision}</p>
           </div>
         </div>
 
         {/* Quote Block */}
-        <div
-          className="rounded-3xl p-10 md:p-14 text-white mb-24 relative overflow-hidden"
-          style={{ backgroundColor: BRAND.blue }}
-        >
-          <div className="relative z-10 max-w-3xl">
-            <p className="text-xl md:text-2xl leading-relaxed mb-8 italic opacity-90">
-              "Families were struggling not with one problem but with several problems simultaneously, and the absence of any coordinating support structure meant that individuals fell through every available gap. OBOMOCARE was founded to close those gaps."
+        <div style={{ background: 'var(--color-brand)', borderRadius: 'var(--radius-md)', padding: 'var(--space-16)', color: '#fff', marginBottom: 'var(--space-16)', position: 'relative', overflow: 'hidden' }}>
+          <div style={{ position: 'relative', zIndex: 1, maxWidth: '48rem' }}>
+            <p style={{ fontSize: 'var(--text-xl)', lineHeight: 1.6, fontStyle: 'italic', opacity: 0.9, marginBottom: 'var(--space-8)' }}>
+              &ldquo;{content.about.founderStory.substring(0, 200)}&rdquo;
             </p>
-            <div className="text-sm font-medium mb-2" style={{ color: BRAND.orange }}>
-              — OBOMOCARE Proposal, June 2026
+            <div style={{ fontSize: 'var(--text-sm)', fontWeight: 500, marginBottom: 'var(--space-4)', color: 'var(--color-accent)' }}>
+              &mdash; OBOMOCARE Proposal, June 2026
             </div>
-            <div className="mt-6 pt-6 border-t border-white/20">
-              <div className="text-xs opacity-70 mb-2">Motto</div>
-              <div className="text-lg font-medium" style={{ color: BRAND.orange }}>Care. Unity. Dignity.</div>
+            <div style={{ borderTop: '1px solid rgba(255,255,255,0.2)', paddingTop: 'var(--space-6)', marginTop: 'var(--space-6)' }}>
+              <div style={{ fontSize: 'var(--text-xs)', opacity: 0.7, marginBottom: 'var(--space-2)' }}>Motto</div>
+              <div style={{ fontSize: 'var(--text-lg)', fontWeight: 600, color: 'var(--color-accent)' }}>Care. Unity. Dignity.</div>
             </div>
           </div>
         </div>
 
         {/* Values */}
-        <div className="mb-24">
-          <h2 className="font-serif text-4xl font-bold text-slate-900 mb-10 text-center">Our Core Values</h2>
-          <div className="flex flex-wrap justify-center gap-4">
+        <div style={{ marginBottom: 'var(--space-16)' }}>
+          <h2 style={{ fontFamily: 'var(--font-display)', fontSize: 'var(--text-3xl)', fontWeight: 700, color: 'var(--ink-900)', textAlign: 'center', marginBottom: 'var(--space-8)' }}>
+            Our Core Values
+          </h2>
+          <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 'var(--space-3)' }}>
             {content.about.values.map((value, idx) => (
-              <span
-                key={idx}
-                className="px-8 py-4 rounded-full font-bold border shadow-md"
-                style={{ backgroundColor: '#fff', color: BRAND.blue, borderColor: `${BRAND.blue}15` }}
-              >
+              <span key={idx} style={{ padding: 'var(--space-3) var(--space-6)', borderRadius: '9999px', fontWeight: 600, fontSize: 'var(--text-sm)', border: '1px solid var(--ink-100)', background: 'var(--surface-elevated)', color: 'var(--color-brand)' }}>
                 {value}
               </span>
             ))}
@@ -83,51 +69,44 @@ export const About: React.FC = () => {
         </div>
 
         {/* Governance */}
-        <div className="mb-24">
-          <div className="text-center mb-16">
-            <div className="inline-block rounded-full px-4 py-2 text-xs font-bold tracking-[0.15em] uppercase mb-6" style={{ backgroundColor: BRAND.orangeLight, color: BRAND.orange }}>
-              Governance and accountability
-            </div>
-            <h2 className="font-serif text-4xl sm:text-5xl font-bold text-slate-900 mb-6 tracking-tight">
+        <div style={{ marginBottom: 'var(--space-16)' }}>
+          <div className="features-head" style={{ textAlign: 'center' }}>
+            <div className="features-head__tag">Governance and accountability</div>
+            <h2 style={{ fontFamily: 'var(--font-display)', fontSize: 'var(--text-4xl)', fontWeight: 700, color: 'var(--ink-900)', lineHeight: 1.05, letterSpacing: '-0.03em' }}>
               Structured from the start
             </h2>
-            <p className="text-slate-500 max-w-2xl mx-auto text-lg font-light">
+            <p style={{ color: 'var(--ink-500)', maxWidth: '40ch', margin: 'var(--space-4) auto 0', lineHeight: 1.7 }}>
               OBOMOCARE is governed by a constitution adopted at its inaugural General Assembly. Authority is distributed across six independent organs with clear mandates and checks.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {orgCards.map((card, i) => (
-              <div
-                key={i}
-                className="rounded-xl p-6 border border-slate-200 bg-white text-center"
-              >
-                <div className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4" style={{ backgroundColor: BRAND.blueLight }}>
-                  <card.icon size={22} style={{ color: BRAND.blue }} />
+          <div className="grid-auto">
+            {governanceCards.map((card) => {
+              const Icon = card.icon;
+              return (
+                <div key={card.id} className="card" style={{ textAlign: 'center', padding: 'var(--space-6)' }}>
+                  <div style={{ width: 48, height: 48, borderRadius: '50%', background: 'var(--color-brand-light)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto var(--space-4)' }}>
+                    <Icon size={22} style={{ color: 'var(--color-brand)' }} />
+                  </div>
+                  <h4 style={{ fontWeight: 600, color: 'var(--ink-900)', marginBottom: 'var(--space-2)' }}>{card.title}</h4>
+                  <p style={{ fontSize: 'var(--text-xs)', color: 'var(--ink-500)', lineHeight: 1.6, marginBottom: 'var(--space-3)' }}>{card.desc}</p>
+                  <span style={{ display: 'inline-block', padding: 'var(--space-1) var(--space-3)', background: 'var(--color-accent-light)', color: 'var(--color-accent)', fontSize: 'var(--text-xs)', fontWeight: 600, borderRadius: '9999px' }}>
+                    {card.badge}
+                  </span>
                 </div>
-                <h4 className="font-medium text-slate-900 mb-2">{card.title}</h4>
-                <p className="text-xs text-slate-500 leading-relaxed mb-3">{card.desc}</p>
-                <span className="inline-block px-3 py-1 rounded-full text-xs font-medium" style={{ backgroundColor: BRAND.orangeLight, color: BRAND.orange }}>
-                  {card.badge}
-                </span>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
 
         {/* CTA */}
-        <div className="rounded-3xl p-10 md:p-16 text-center" style={{ backgroundColor: BRAND.blueLight }}>
-          <h3 className="font-serif text-3xl font-bold text-slate-900 mb-4">Join our mission</h3>
-          <p className="text-slate-600 max-w-2xl mx-auto mb-8 text-lg font-light">
+        <div style={{ background: 'var(--color-brand-light)', borderRadius: 'var(--radius-md)', padding: 'var(--space-16)', textAlign: 'center' }}>
+          <h3 style={{ fontFamily: 'var(--font-display)', fontSize: 'var(--text-3xl)', fontWeight: 700, color: 'var(--ink-900)', marginBottom: 'var(--space-4)' }}>Join our mission</h3>
+          <p style={{ color: 'var(--ink-500)', maxWidth: '40ch', margin: '0 auto var(--space-8)', lineHeight: 1.7 }}>
             Whether you volunteer, donate, or spread the word, your support helps us close the gaps that leave vulnerable households behind.
           </p>
-          <ReactRouterDOM.Link
-            to="/get-involved"
-            className="inline-flex items-center gap-3 px-8 py-4 rounded-full font-bold text-white transition-all hover:opacity-90 shadow-lg"
-            style={{ backgroundColor: BRAND.orange }}
-          >
+          <ReactRouterDOM.Link to="/get-involved" className="btn btn--accent">
             Get involved
-            <ArrowRight size={18} />
           </ReactRouterDOM.Link>
         </div>
       </div>

@@ -1,0 +1,50 @@
+@layer layout {
+  .container {
+    width: var(--container);
+    margin-inline: auto;
+  }
+
+  .section {
+    padding-block: var(--section-gap);
+  }
+
+  .section--compact {
+    padding-block: calc(var(--section-gap) * 0.6);
+  }
+
+  .full-bleed {
+    width: 100vw;
+    margin-inline: calc(50% - 50vw);
+  }
+
+  .grid-auto {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(20rem, 100%), 1fr));
+    gap: var(--space-8);
+  }
+
+  .split-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-16);
+    align-items: center;
+  }
+
+  @media (max-width: 768px) {
+    .split-layout { grid-template-columns: 1fr; gap: var(--space-8); }
+  }
+
+  .bento {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: var(--space-4);
+  }
+
+  .bento__main { grid-column: span 8; grid-row: span 2; }
+  .bento__side { grid-column: span 4; }
+  .bento__wide { grid-column: span 12; }
+
+  @media (max-width: 640px) {
+    .bento > * { grid-column: span 12; }
+  }
+}

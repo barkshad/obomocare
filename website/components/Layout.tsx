@@ -4,7 +4,6 @@ import { Navbar } from './Navbar';
 import { Footer } from './Footer';
 import { useContent } from '../contexts/ContentContext';
 import { Loading } from './Loading';
-import { BRAND } from '../brand';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -22,7 +21,7 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
   useEffect(() => {
     if (content.theme && content.theme.primaryColor) {
       const root = document.documentElement;
-      root.style.setProperty('--color-primary-500', content.theme.primaryColor);
+      root.style.setProperty('--color-brand', content.theme.primaryColor);
     }
   }, [content.theme]);
 
@@ -31,12 +30,13 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
   }
 
   return (
-    <div className="min-h-screen flex flex-col font-sans" style={{ color: BRAND.textPrimary, backgroundColor: BRAND.surface }}>
+    <>
+      <a className="skip-link" href="#main">Skip to main content</a>
       {!isAdmin && <Navbar />}
-      <main className="flex-grow">
+      <main id="main">
         {children}
       </main>
       {!isAdmin && <Footer />}
-    </div>
+    </>
   );
 };

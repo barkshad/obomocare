@@ -1,132 +1,44 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import * as ReactRouterDOM from 'react-router-dom';
-import { Menu, X, Heart } from 'lucide-react';
 import { BRAND } from '../brand';
 
 export const Navbar: React.FC = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileOpen, setIsMobileOpen] = useState(false);
-  const location = ReactRouterDOM.useLocation();
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  useEffect(() => {
-    setIsMobileOpen(false);
-  }, [location]);
-
-  const navLinks = [
-    { name: 'Who we are', path: '/about' },
-    { name: 'Our work', path: '/programs' },
-    { name: 'Impact', path: '/stories' },
-    { name: 'Get involved', path: '/get-involved' },
-    { name: 'Governance & Risk', path: '/impact' },
-  ];
-
-  const isHome = location.pathname === '/';
+  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header
-      className={`fixed top-0 w-full z-50 transition-all duration-300 flex justify-center ${isScrolled ? 'py-3' : 'py-5'}`}
-    >
-      <div
-        className={`w-full max-w-7xl mx-4 sm:mx-6 lg:mx-8 px-6 transition-all duration-300 flex justify-between items-center ${
-          isScrolled
-            ? 'bg-white shadow-md border rounded-full py-2.5'
-            : 'bg-transparent py-2'
-        }`}
-        style={isScrolled ? { borderColor: BRAND.border } : {}}
-      >
-        <ReactRouterDOM.Link to="/" className="flex items-center gap-3 relative z-50">
-          <div
-            className="w-10 h-10 rounded-xl flex items-center justify-center text-white font-serif font-bold text-xl shadow-md"
-            style={{ backgroundColor: BRAND.blue }}
-          >
-            OC
-          </div>
-          <span
-            className={`font-serif text-2xl font-bold tracking-tight transition-colors ${
-              isScrolled || isMobileOpen || !isHome ? 'text-gray-900' : 'text-white'
-            }`}
-          >
-            OBOMO<span style={{ color: BRAND.orange }}>.</span>CARE
-          </span>
+    <header className="site-header">
+      <nav className="nav" aria-label="Main navigation">
+        <ReactRouterDOM.Link to="/" className="nav__logo" aria-label="OBOMOCARE home">
+          <span>OC</span>
+          OBOMOCARE
         </ReactRouterDOM.Link>
 
-        <nav className="hidden md:flex items-center space-x-1">
-          {navLinks.map((link) => (
-            <ReactRouterDOM.Link
-              key={link.name}
-              to={link.path}
-              className={`relative px-4 py-2 text-sm font-medium transition-colors rounded-full ${
-                location.pathname === link.path
-                  ? 'font-bold bg-gray-50'
-                  : isScrolled || !isHome
-                    ? 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
-                    : 'text-white/80 hover:text-white hover:bg-white/10'
-              }`}
-            >
-              {link.name}
-            </ReactRouterDOM.Link>
-          ))}
-          <div className="ml-4">
-            <ReactRouterDOM.Link
-              to="/get-involved"
-              className="px-6 py-2.5 rounded-full text-white font-medium hover:opacity-90 transition-all shadow-md flex items-center gap-2"
-              style={{ backgroundColor: BRAND.orange }}
-            >
-              <Heart size={16} fill="currentColor" className="text-white" />
-              <span>Support us</span>
-            </ReactRouterDOM.Link>
-          </div>
-        </nav>
-
         <button
-          className={`md:hidden p-2 rounded-full transition-colors relative z-50 ${
-            isScrolled || isMobileOpen || !isHome
-              ? 'bg-gray-100 hover:bg-gray-200 text-gray-800'
-              : 'bg-white/10 hover:bg-white/20 text-white'
-          }`}
-          onClick={() => setIsMobileOpen(!isMobileOpen)}
+          className={`nav__toggle ${menuOpen ? 'open' : ''}`}
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-expanded={menuOpen}
+          aria-controls="nav-menu"
+          aria-label={menuOpen ? 'Close navigation' : 'Open navigation'}
         >
-          {isMobileOpen ? <X size={20} /> : <Menu size={20} />}
+          <span className="nav__toggle__bar"></span>
         </button>
-      </div>
 
-      {isMobileOpen && (
-        <div
-          className="md:hidden bg-white border-b shadow-lg absolute top-0 left-0 w-full pt-24 pb-8"
-          style={{ borderColor: BRAND.border }}
-        >
-          <div className="px-6 space-y-3">
-            {navLinks.map((link) => (
-              <ReactRouterDOM.Link
-                key={link.name}
-                to={link.path}
-                className="block px-4 py-4 rounded-2xl text-lg font-medium transition-colors text-gray-600 hover:bg-gray-50"
-                onClick={() => setIsMobileOpen(false)}
-              >
-                {link.name}
-              </ReactRouterDOM.Link>
-            ))}
-            <div className="pt-6 mt-4 border-t" style={{ borderColor: BRAND.border }}>
-              <ReactRouterDOM.Link
-                to="/get-involved"
-                className="block text-center w-full px-5 py-4 rounded-2xl text-white font-bold shadow-md"
-                style={{ backgroundColor: BRAND.orange }}
-                onClick={() => setIsMobileOpen(false)}
-              >
-                Support our work
-              </ReactRouterDOM.Link>
-            </div>
-          </div>
-        </div>
-      )}
+        <ul className={`nav__menu ${menuOpen ? 'open' : ''}`} id="nav-menu" role="list">
+          <li><ReactRouterDOM.Link to="/" onClick={() => setMenuOpen(false)}>Home</ReactRouterDOM.Link></li>
+          <li><ReactRouterDOM.Link to="/about" onClick={() => setMenuOpen(false)}>About</ReactRouterDOM.Link></li>
+          <li><ReactRouterDOM.Link to="/programs" onClick={() => setMenuOpen(false)}>Our work</ReactRouterDOM.Link></li>
+          <li><ReactRouterDOM.Link to="/get-involved" onClick={() => setMenuOpen(false)}>Get involved</ReactRouterDOM.Link></li>
+          <li>
+            <ReactRouterDOM.Link
+              to="/contact"
+              className="btn btn--accent"
+              onClick={() => setMenuOpen(false)}
+            >
+              Support us
+            </ReactRouterDOM.Link>
+          </li>
+        </ul>
+      </nav>
     </header>
   );
 };

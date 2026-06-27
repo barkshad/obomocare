@@ -20,7 +20,7 @@ export const DEFAULT_CONTENT: SiteContent = {
   hero: {
     headline: "Delivering care. Restoring dignity.",
     subheadline: "We are a registered CBO in Kisii and Nyamira. Food. Transport. Personal care. Companionship. The things that keep people alive and human — we bring them to the households formal systems keep missing.",
-    heroImage: "https://images.unsplash.com/flagged=1/photo-1544022613-e87ca75a784a?w=1920&h=1080&fit=crop"
+    heroImage: ""
   },
   homePage: {
     stats: [
@@ -37,10 +37,10 @@ export const DEFAULT_CONTENT: SiteContent = {
     mission: "To provide integrated community support through food assistance, healthcare access, transportation facilitation, volunteer caregiving, companionship, community partnerships, and sustainable development initiatives that improve the lives of vulnerable households.",
     vision: "A community where every vulnerable person lives with dignity, receives compassionate care, has access to essential services, and belongs to a supportive and inclusive society.",
     founderStory: "In 2020, a group of us watched the lockdowns hit our community harder than anyone in Nairobi was reporting. Elderly neighbours whose children worked in the city could not reach them. People on chronic medication could not get to the clinic. The formal systems — what formal systems? A helpline number that rang forever. A county health officer who meant well but had no budget. We were not development experts. We were neighbours. We pooled money, bought maize flour and soap, and started walking door to door. Someone said the word obomo — the nurturing warmth a mother gives her child. It stuck. It is still what drives us. Not charity. Just people taking care of their own.",
-    founderImage: "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=800&h=800&fit=crop",
+    founderImage: "",
     values: ["Dignity", "Compassion", "Community", "Integrity", "Accountability", "Inclusion", "Sustainability", "Transparency", "Respect", "Service"],
-    homePreviewImage1: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=600&h=750&fit=crop",
-    homePreviewImage2: "https://images.unsplash.com/photo-1593113598332-cd288d649433?w=600&h=750&fit=crop"
+    homePreviewImage1: "",
+    homePreviewImage2: ""
   },
   getInvolved: {
     introTitle: "Get Involved",
@@ -68,28 +68,28 @@ export const DEFAULT_CONTENT: SiteContent = {
       id: "p1",
       title: "Food Support",
       description: "A food basket every two weeks. Maize flour, beans, cooking oil, salt, soap. For elderly beneficiaries who cannot cook, we coordinate meals. We source through supermarkets, local businesses, and church networks.",
-      image: "https://images.unsplash.com/flagged=1/photo-1544022613-e87ca75a784a?w=800&h=600&fit=crop",
+      image: "",
       stats: "2,000+ Families Served"
     },
     {
       id: "p2",
       title: "Transport Facilitation",
       description: "We partner with boda boda associations in Kisii and Nyamira. Beneficiaries get subsidised rides to clinics, hospitals, and pharmacy pickups. A missed appointment means failed treatment. We make sure they get there.",
-      image: "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=800&h=600&fit=crop",
+      image: "",
       stats: "Healthcare Access"
     },
     {
       id: "p3",
       title: "Personal Care and Dignity",
       description: "Trained caregivers visit homes to help with bathing, dressing, grooming, wound care. We document every visit so we catch deterioration early. Dignity is not a luxury. It is the baseline.",
-      image: "https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?w=800&h=600&fit=crop",
+      image: "",
       stats: "40 Active Caregivers"
     },
     {
       id: "p4",
       title: "Companionship and Inclusion",
       description: "We sit and talk. We play games. We accompany people to community events. Isolation kills — it accelerates cognitive decline and deepens depression. We have watched people come back to life when someone shows up regularly.",
-      image: "https://images.unsplash.com/photo-1511895426328-dc8714191300?w=800&h=600&fit=crop",
+      image: "",
       stats: "Community Resilience"
     }
   ],
@@ -101,7 +101,7 @@ export const DEFAULT_CONTENT: SiteContent = {
       date: "2020-06-15",
       excerpt: "We watched our elderly neighbours struggle while the rest of the country was focused on Covid statistics. So we pooled money and started walking.",
       content: "In 2020, during the lockdowns, a group of us in the Gusii community noticed something nobody was reporting. Our elderly neighbours were running out of food. People on hypertension drugs could not get to the clinic because the boda boda riders had stopped operating. We pooled personal money, bought maize flour and soap, and started delivering door to door. The word obomo means nurturing warmth in our language. It is what kept us going.",
-      image: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=800&h=400&fit=crop",
+      image: "",
       category: "Success Story"
     },
     {
@@ -111,7 +111,7 @@ export const DEFAULT_CONTENT: SiteContent = {
       date: "2025-01-01",
       excerpt: "Not one dollar of foreign funding. Two thousand families served. Every shilling raised locally.",
       content: "Five years, and we have never received international funding. Personal contributions. Supermarket donations. Church offerings. Harambee. We have served over two thousand families this way. We have 22 active caregivers and 18 community health volunteers linked to our network. Now we are ready to scale, but we will not compromise how we operate.",
-      image: "https://images.unsplash.com/photo-1593113598332-cd288d649433?w=800&h=400&fit=crop",
+      image: "",
       category: "Community"
     },
     {
@@ -121,7 +121,7 @@ export const DEFAULT_CONTENT: SiteContent = {
       date: "2025-03-01",
       excerpt: "Forty volunteers trained to provide professional home-based care. A stipend, transport reimbursement, and a career pathway into county health.",
       content: "Forty community volunteers now deliver home-based care across Kisii and Nyamira. They train in personal care techniques, first aid, CPR, waste management, basic mental health support, and safeguarding. It is not just volunteering — it is a career pathway. Skills gained qualify volunteers for community health assistant roles within the county government system. They get a monthly stipend, transport money, peer support, and formal recognition.",
-      image: "https://images.unsplash.com/flagged=1/photo-1544022613-e87ca75a784a?w=800&h=400&fit=crop",
+      image: "",
       category: "Education"
     }
   ],
@@ -132,7 +132,7 @@ export const DEFAULT_CONTENT: SiteContent = {
       age: 0,
       dream: "Dignity in Later Life",
       bio: "Elderly persons living alone. We bring food, help them bathe, keep them company, and get them to the clinic. Every visit documented so we catch problems before they become emergencies.",
-      image: "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=400&h=500&fit=crop",
+      image: "",
       needsSponsorship: true
     },
     {
@@ -141,7 +141,7 @@ export const DEFAULT_CONTENT: SiteContent = {
       age: 0,
       dream: "Complete Household Support",
       bio: "Households headed by orphaned children or persons with disabilities. Food baskets every two weeks, hygiene supplies, and regular care visits. We do not let them fall through the cracks.",
-      image: "https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?w=400&h=500&fit=crop",
+      image: "",
       needsSponsorship: true
     },
     {
@@ -150,14 +150,14 @@ export const DEFAULT_CONTENT: SiteContent = {
       age: 0,
       dream: "Professional Community Care",
       bio: "40 trained caregivers. They bathe, dress, groom, treat wounds, and keep people company. Training covers personal care, first aid, and basic mental health. A stipend, transport, and a career path.",
-      image: "https://images.unsplash.com/photo-1511895426328-dc8714191300?w=400&h=500&fit=crop",
+      image: "",
       needsSponsorship: true
     }
   ],
   gallery: [
     {
       id: "g1",
-      url: "https://images.unsplash.com/photo-1544022613-e87ca75a784a?w=800&h=800&fit=crop",
+      url: "",
       publicId: "obomo/g1",
       type: "image",
       category: "General",
@@ -165,7 +165,7 @@ export const DEFAULT_CONTENT: SiteContent = {
     },
     {
       id: "g2",
-      url: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=800&h=800&fit=crop",
+      url: "",
       publicId: "obomo/g2",
       type: "image",
       category: "Community",
@@ -173,7 +173,7 @@ export const DEFAULT_CONTENT: SiteContent = {
     },
     {
       id: "g3",
-      url: "https://images.unsplash.com/photo-1593113598332-cd288d649433?w=800&h=800&fit=crop",
+      url: "",
       publicId: "obomo/g3",
       type: "image",
       category: "Welfare",
@@ -181,7 +181,7 @@ export const DEFAULT_CONTENT: SiteContent = {
     },
     {
       id: "g4",
-      url: "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=800&h=800&fit=crop",
+      url: "",
       publicId: "obomo/g4",
       type: "image",
       category: "General",
@@ -189,7 +189,7 @@ export const DEFAULT_CONTENT: SiteContent = {
     },
     {
       id: "g5",
-      url: "https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?w=800&h=800&fit=crop",
+      url: "",
       publicId: "obomo/g5",
       type: "image",
       category: "Community",
@@ -197,7 +197,7 @@ export const DEFAULT_CONTENT: SiteContent = {
     },
     {
       id: "g6",
-      url: "https://images.unsplash.com/photo-1511895426328-dc8714191300?w=800&h=800&fit=crop",
+      url: "",
       publicId: "obomo/g6",
       type: "image",
       category: "Welfare",
