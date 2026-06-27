@@ -58,10 +58,10 @@ const loadFromLocalStorage = (): SiteContent => {
         homePage: { ...DEFAULT_CONTENT.homePage, ...(parsedData.homePage || {}) },
         about: { ...DEFAULT_CONTENT.about, ...(parsedData.about || {}) },
         contact: { ...DEFAULT_CONTENT.contact, ...(parsedData.contact || {}) },
-        programs: parsedData.programs || DEFAULT_CONTENT.programs,
-        stories: parsedData.stories || DEFAULT_CONTENT.stories,
-        children: parsedData.children || DEFAULT_CONTENT.children,
-        gallery: parsedData.gallery || DEFAULT_CONTENT.gallery,
+        programs: parsedData.programs?.length ? parsedData.programs : DEFAULT_CONTENT.programs,
+        stories: parsedData.stories?.length ? parsedData.stories : DEFAULT_CONTENT.stories,
+        children: parsedData.children?.length ? parsedData.children : DEFAULT_CONTENT.children,
+        gallery: parsedData.gallery?.length ? parsedData.gallery : DEFAULT_CONTENT.gallery,
       };
       
       if (Array.isArray(mergedLocal.gallery) && mergedLocal.gallery.length > 0 && typeof mergedLocal.gallery[0] === 'string') {
@@ -109,10 +109,10 @@ export const ContentProvider: React.FC<{ children: ReactNode }> = ({ children })
             homePage: { ...DEFAULT_CONTENT.homePage, ...(data.homePage || {}) },
             about: { ...DEFAULT_CONTENT.about, ...(data.about || {}) },
             contact: { ...DEFAULT_CONTENT.contact, ...(data.contact || {}) },
-            programs: data.programs || DEFAULT_CONTENT.programs,
-            stories: data.stories || DEFAULT_CONTENT.stories,
-            children: data.children || DEFAULT_CONTENT.children,
-            gallery: data.gallery || DEFAULT_CONTENT.gallery,
+            programs: data.programs?.length ? data.programs : DEFAULT_CONTENT.programs,
+            stories: data.stories?.length ? data.stories : DEFAULT_CONTENT.stories,
+            children: data.children?.length ? data.children : DEFAULT_CONTENT.children,
+            gallery: data.gallery?.length ? data.gallery : DEFAULT_CONTENT.gallery,
         };
 
         if (Array.isArray(mergedData.gallery) && mergedData.gallery.length > 0 && typeof mergedData.gallery[0] === 'string') {
