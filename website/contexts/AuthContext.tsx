@@ -20,7 +20,7 @@ export const useAuth = () => {
 export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [loading, setLoading] = useState(true);
-  const [currentPassword, setCurrentPassword] = useState("obomocare2024");
+  const [currentPassword, setCurrentPassword] = useState("12345678");
 
   useEffect(() => {
     const storedAuth = localStorage.getItem('obomo_admin_auth');
