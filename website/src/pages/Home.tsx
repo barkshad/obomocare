@@ -34,7 +34,6 @@ export const Home: React.FC = () => {
       <section className="hero">
         <img src={content.hero.heroImage} alt="" className="hero__bg" />
         <div className="hero__overlay"></div>
-        <div className="hero__pattern"></div>
         <div className="hero__content">
           <div className="hero__eyebrow">Gusii Region, Kenya &middot; Est. 2020</div>
           <h1>{content.hero.headline}</h1>
@@ -43,10 +42,14 @@ export const Home: React.FC = () => {
             <ReactRouterDOM.Link to="/get-involved" className="btn btn--accent btn--lg">
               Support our work
             </ReactRouterDOM.Link>
-            <ReactRouterDOM.Link to="/about" className="btn btn--outline btn--lg" style={{ borderColor: 'rgba(255,255,255,0.3)', color: '#fff' }}>
-              Learn more
+            <ReactRouterDOM.Link to="/about" className="btn btn--outline btn--lg">
+              Learn more <span className="arrow" aria-hidden="true">&rarr;</span>
             </ReactRouterDOM.Link>
           </div>
+        </div>
+        <div className="hero__scroll" aria-hidden="true">
+          <span>Scroll</span>
+          <div className="hero__mouse"></div>
         </div>
       </section>
 

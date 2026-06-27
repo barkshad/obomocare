@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import * as ReactRouterDOM from 'react-router-dom';
+import { Logo } from './Logo';
 
 const NAV_LINKS = [
   { to: '/about', label: 'About' },
@@ -17,8 +18,7 @@ export const Navbar: React.FC = () => {
     <header className="site-header">
       <nav className="nav" aria-label="Main navigation">
         <ReactRouterDOM.Link to="/" className="nav__logo" aria-label="OBOMOCARE home">
-          <span>OC</span>
-          OBOMOCARE
+          <Logo />
         </ReactRouterDOM.Link>
 
         <button
