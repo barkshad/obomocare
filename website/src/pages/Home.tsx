@@ -70,7 +70,7 @@ export const Home: React.FC = () => {
         </div>
       </section>
 
-      <section className="section" style={{ background: 'var(--surface-primary)' }}>
+      <section className="section" style={{ background: '#FFFFFF' }}>
         <div className="container">
           <div className="features-head" style={{ textAlign: 'center' }}>
             <div className="features-head__tag">Our pillars</div>
@@ -84,7 +84,7 @@ export const Home: React.FC = () => {
                 style={{
                   display: 'block',
                   padding: 'var(--space-6)',
-                  background: 'var(--surface-elevated)',
+                  background: '#F8F8FA',
                   borderRadius: 'var(--radius-md)',
                   border: '1px solid rgba(0,0,0,0.06)',
                   textDecoration: 'none',
