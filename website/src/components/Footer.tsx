@@ -1,5 +1,6 @@
 import React from 'react';
 import * as ReactRouterDOM from 'react-router-dom';
+import { Logo } from './Logo';
 
 export const Footer: React.FC = () => {
   const year = new Date().getFullYear();
@@ -8,7 +9,10 @@ export const Footer: React.FC = () => {
     <footer className="site-footer">
       <div className="footer__inner">
         <div>
-          <div className="footer__brand">OBOMOCARE Community Based Organisation</div>
+          <div className="footer__brand" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.75rem' }}>
+            <Logo variant="navbar" />
+            <span>OBOMOCARE</span>
+          </div>
           <p>Gusii Region, Kenya &middot; Kisii and Nyamira Counties</p>
           <p>Established 2020 &middot; Registered CBO, Kenya</p>
           <p style={{ marginTop: '0.5rem' }}>

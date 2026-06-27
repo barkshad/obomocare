@@ -9,7 +9,7 @@ import {
 import { ImageUploader } from '../components/ImageUploader';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
 import { Program, ChildProfile, Story, MediaItem, SiteContent } from '../config/types';
-import { BRAND } from '../config/brand';
+import { BRAND, TAILWIND_COLORS } from '../config/brand';
 
 const generateId = () => Math.random().toString(36).substr(2, 9);
 
@@ -225,21 +225,19 @@ export const Admin: React.FC = () => {
       )}
 
       {/* Sidebar */}
-      <aside className={`
-        fixed inset-y-0 left-0 z-50 w-72 bg-slate-900 text-white flex flex-col shadow-2xl 
-        transform transition-transform duration-300 ease-in-out
-        md:relative md:translate-x-0 md:w-72
-        ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'}
-      `}>
-        <div className="p-6 border-b border-slate-800 flex items-center justify-between">
-           <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-lg flex items-center justify-center font-bold font-serif text-white" style={{ backgroundColor: BRAND.blue }}>OC</div>
-             <span className="font-bold tracking-wide text-lg">OBOMO CMS</span>
-           </div>
-           <button onClick={() => setIsSidebarOpen(false)} className="md:hidden text-slate-400 p-1 hover:text-white rounded-md hover:bg-slate-800">
-             <X size={24} />
-           </button>
+  <aside className={`fixed inset-y-0 left-0 z-50 w-72 flex flex-col shadow-2xl transform transition-transform duration-300 ease-in-out md:relative md:translate-x-0 md:w-72 ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'}`} style={{ background: BRAND.navy }}>
+    <div className="p-6 border-b flex items-center justify-between" style={{ borderColor: BRAND.navyLight }}>
+      <div className="flex items-center gap-3">
+        <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ backgroundColor: BRAND.orange }}>
+          <svg viewBox="0 0 40 40" width="20" height="20"><path d="M20 4 C14 10 12 26 20 34 C28 26 26 10 20 4 Z" fill="white" opacity="0.95" /></svg>
         </div>
+        <span className="font-bold tracking-wide text-lg text-white">OBOMOCARE</span>
+      </div>
+      <button onClick={() => setIsSidebarOpen(false)} className="md:hidden p-1 rounded-md hover:bg-white/10" style={{ color: 'rgba(255,255,255,0.5)' }}>
+        <X size={24} />
+      </button>
+    </div>
+
         
         <nav className="flex-1 p-4 space-y-6 overflow-y-auto custom-scrollbar">
           {menuGroups.map((group, groupIdx) => (

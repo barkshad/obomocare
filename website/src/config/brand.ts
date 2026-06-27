@@ -4,6 +4,8 @@ export const BRAND = {
   navyMid: '#14142A',
   navyLight: '#1E1E3A',
   orangeLight: '#FEF0E4',
+  blue: '#E8751A',
+  blueLight: '#FEF0E4',
   surface: '#0A0A1A',
   surfaceLight: '#F8F8FA',
   border: 'rgba(255,255,255,0.15)',

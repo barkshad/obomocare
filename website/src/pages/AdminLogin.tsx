@@ -25,7 +25,6 @@ export const AdminLogin: React.FC = () => {
     e.preventDefault();
     setIsLoading(true);
     setError('');
-
     try {
       const success = await login(password);
       if (success) {
@@ -41,45 +40,82 @@ export const AdminLogin: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-slate-100 p-4">
-      <div className="bg-white p-8 rounded-2xl shadow-xl w-full max-w-sm border border-slate-200">
+    <div
+      className="min-h-screen flex items-center justify-center p-4"
+      style={{
+        background: `linear-gradient(135deg, ${BRAND.navy} 0%, ${BRAND.navyMid} 100%)`
+      }}
+    >
+      <div
+        className="w-full max-w-sm p-8 rounded-2xl shadow-2xl"
+        style={{
+          background: BRAND.navyMid,
+          border: `1px solid rgba(255,255,255,0.08)`
+        }}
+      >
         <div className="text-center mb-8">
-          <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4" style={{ backgroundColor: BRAND.blueLight, color: BRAND.blue }}>
+          <div
+            className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
+            style={{ backgroundColor: BRAND.orangeLight, color: BRAND.orange }}
+          >
             <Lock size={32} />
           </div>
-          <h1 className="font-serif text-2xl font-bold text-slate-800">Admin Access</h1>
-          <p className="text-slate-500 text-sm mt-2">Restricted area for foundation staff.</p>
+          <h1 className="text-2xl font-bold text-white">
+            Admin Access
+          </h1>
+          <p className="text-sm mt-2" style={{ color: 'rgba(255,255,255,0.55)' }}>
+            Restricted area for OBOMOCARE staff.
+          </p>
         </div>
-        
-        <form onSubmit={handleSubmit} className="space-y-4">
+
+        <form onSubmit={handleSubmit} className="space-y-5">
           <div>
-            <label className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Access Key</label>
-            <input 
-              type="password" 
+            <label
+              className="block text-xs font-bold uppercase tracking-wider mb-2"
+              style={{ color: 'rgba(255,255,255,0.55)' }}
+            >
+              Access Key
+            </label>
+            <input
+              type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full p-4 border border-slate-200 rounded-xl focus:ring-2 focus:ring-[#1A0FAB] outline-none transition-all text-center text-lg tracking-widest"
+              className="w-full p-4 rounded-xl text-center text-lg tracking-widest outline-none transition-all"
+              style={{
+                background: BRAND.navyLight,
+                border: '1px solid rgba(255,255,255,0.12)',
+                color: '#fff',
+              }}
               placeholder="•••••"
-              required 
+              required
             />
           </div>
-          
+
           {error && (
-            <div className="text-red-500 text-sm text-center bg-red-50 p-2 rounded-lg">
+            <div
+              className="text-sm text-center p-3 rounded-lg"
+              style={{ background: 'rgba(239,68,68,0.12)', color: '#fca5a5' }}
+            >
               {error}
             </div>
           )}
 
-          <button 
-            type="submit" 
+          <button
+            type="submit"
             disabled={isLoading}
-            className={`w-full bg-slate-900 text-white py-4 rounded-xl font-bold transition-all ${isLoading ? 'opacity-70' : 'hover:bg-slate-800 hover:shadow-lg'}`}
+            className="w-full py-4 text-white rounded-xl font-bold transition-all shadow-lg"
+            style={{
+              backgroundColor: BRAND.orange,
+            }}
           >
             {isLoading ? 'Verifying...' : 'Enter Dashboard'}
           </button>
 
           {showReset && (
-            <div className="text-green-600 text-sm text-center bg-green-50 p-3 rounded-lg border border-green-200">
+            <div
+              className="text-sm text-center p-3 rounded-lg"
+              style={{ background: 'rgba(34,197,94,0.12)', color: '#86efac' }}
+            >
               Password reset to <strong>12345678</strong>. Enter it above.
             </div>
           )}
@@ -88,15 +124,20 @@ export const AdminLogin: React.FC = () => {
             <button
               type="button"
               onClick={handleReset}
-              className="text-sm text-slate-400 hover:text-slate-600 underline underline-offset-2"
+              className="text-sm underline underline-offset-2 transition-colors"
+              style={{ color: 'rgba(255,255,255,0.35)' }}
             >
               Forgot password? Reset to default
             </button>
           </div>
         </form>
-        
+
         <div className="mt-6 text-center">
-          <button onClick={() => navigate('/')} className="text-slate-400 text-sm hover:text-slate-600">
+          <button
+            onClick={() => navigate('/')}
+            className="text-sm transition-colors"
+            style={{ color: 'rgba(255,255,255,0.4)' }}
+          >
             &larr; Return to Website
           </button>
         </div>
