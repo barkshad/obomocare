@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
-import { AdminContextType } from '../types';
+import { AdminContextType } from '../config/types';
 
 interface AuthContextType {
   isAuthenticated: boolean;

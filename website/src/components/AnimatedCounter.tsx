@@ -1,5 +1,5 @@
 import React from 'react';
-import { BRAND } from '../brand';
+import { BRAND } from '../config/brand';
 
 interface AnimatedCounterProps {
   value: number;

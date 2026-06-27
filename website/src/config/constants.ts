@@ -15,7 +15,7 @@ export const CLOUDINARY_UPLOAD_PRESET = "obomo_unsigned";
 
 export const DEFAULT_CONTENT: SiteContent = {
   theme: {
-    primaryColor: "#1A0FAB"
+    primaryColor: "#0A0A1A"
   },
   hero: {
     headline: "Delivering care. Restoring dignity.",
@@ -36,9 +36,13 @@ export const DEFAULT_CONTENT: SiteContent = {
   about: {
     mission: "To provide integrated community support through food assistance, healthcare access, transportation facilitation, volunteer caregiving, companionship, community partnerships, and sustainable development initiatives that improve the lives of vulnerable households.",
     vision: "A community where every vulnerable person lives with dignity, receives compassionate care, has access to essential services, and belongs to a supportive and inclusive society.",
-    founderStory: "In 2020, a group of us watched the lockdowns hit our community harder than anyone in Nairobi was reporting. Elderly neighbours whose children worked in the city could not reach them. People on chronic medication could not get to the clinic. The formal systems — what formal systems? A helpline number that rang forever. A county health officer who meant well but had no budget. We were not development experts. We were neighbours. We pooled money, bought maize flour and soap, and started walking door to door. Someone said the word obomo — the nurturing warmth a mother gives her child. It stuck. It is still what drives us. Not charity. Just people taking care of their own.",
+    founderStory: "When the lockdowns hit in March 2020, most of the country was watching Covid numbers. We were watching our neighbour Mama Kerubo, who is 76 and lives alone. Her children work in Nairobi. They could not reach her. She had run out of food three days before we found out. Not because nobody cared — because nobody knew. We pooled money from our own pockets. Bought maize flour, beans, cooking oil, soap. Started walking door to door in our own village. That first week we found seven more households in the same situation. Someone said the word obomo, which in our language means the warm, nurturing feeling a mother gives her child. It stuck. Five years later, we have served over two thousand families. We have never taken international funding. We are still neighbours taking care of our own.",
     founderImage: "",
-    values: ["Dignity", "Compassion", "Community", "Integrity", "Accountability", "Inclusion", "Sustainability", "Transparency", "Respect", "Service"],
+    values: [
+      "Dignity. We do not take photos of beneficiaries without asking. We do not share identifying details in reports. When someone cannot bathe alone, we help them in privacy. Dignity is not a word on a poster — it is a thousand small decisions made right every day.",
+      "Community. We are not outsiders bringing solutions to a problem we studied from afar. We live in these villages. Our caregivers are drawn from the communities they serve. When a household falls through the cracks, it is their neighbour who notices first.",
+      "Accountability. We publish quarterly financial reports. Every donor can see exactly where their money went. Our books are audited annually by an independent auditor. We do not deduct admin costs from donations — we raise that separately."
+    ],
     homePreviewImage1: "",
     homePreviewImage2: ""
   },
@@ -100,7 +104,7 @@ export const DEFAULT_CONTENT: SiteContent = {
       author: "OBOMOCARE",
       date: "2020-06-15",
       excerpt: "We watched our elderly neighbours struggle while the rest of the country was focused on Covid statistics. So we pooled money and started walking.",
-      content: "In 2020, during the lockdowns, a group of us in the Gusii community noticed something nobody was reporting. Our elderly neighbours were running out of food. People on hypertension drugs could not get to the clinic because the boda boda riders had stopped operating. We pooled personal money, bought maize flour and soap, and started delivering door to door. The word obomo means nurturing warmth in our language. It is what kept us going.",
+      content: "In March 2020, the lockdowns hit. Most of the country was watching the daily case numbers on television. We were watching Mama Kerubo, our neighbour, who had not eaten in three days. Her children work in Nairobi and could not reach her. The formal systems — what formal systems? We pooled personal money that first week. Bought maize flour, beans, soap. Started walking door to door. We found seven more households in the same situation within that first week. The word obomo means nurturing warmth in our language. It is still what drives us five years later.",
       image: "",
       category: "Success Story"
     },

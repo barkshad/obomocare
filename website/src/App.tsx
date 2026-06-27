@@ -11,6 +11,7 @@ import { Stories } from './pages/Stories';
 import { Impact } from './pages/Impact';
 import { Gallery } from './pages/Gallery';
 import { Contact } from './pages/Contact';
+import { Budget } from './pages/Budget';
 import { AdminLogin } from './pages/AdminLogin';
 import { Admin } from './pages/Admin';
 import { AuthProvider } from './contexts/AuthContext';
@@ -29,6 +30,7 @@ const PublicRoutes: React.FC = () => {
         <ReactRouterDOM.Route path="/stories" element={<Stories />} />
         <ReactRouterDOM.Route path="/gallery" element={<Gallery />} />
         <ReactRouterDOM.Route path="/impact" element={<Impact />} />
+        <ReactRouterDOM.Route path="/budget" element={<Budget />} />
         <ReactRouterDOM.Route path="/contact" element={<Contact />} />
         <ReactRouterDOM.Route path="*" element={<ReactRouterDOM.Navigate to="/" replace />} />
       </ReactRouterDOM.Routes>

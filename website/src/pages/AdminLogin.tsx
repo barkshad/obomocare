@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useAuth } from '../contexts/AuthContext';
 import * as ReactRouterDOM from 'react-router-dom';
 import { Lock } from 'lucide-react';
-import { BRAND } from '../brand';
+import { BRAND } from '../config/brand';
 
 export const AdminLogin: React.FC = () => {
   const [password, setPassword] = useState('');

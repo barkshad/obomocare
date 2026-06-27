@@ -1,0 +1,49 @@
+import React from 'react';
+import * as ReactRouterDOM from 'react-router-dom';
+import { useContent } from '../contexts/ContentContext';
+import { ArrowLeft } from 'lucide-react';
+
+export const ProgramDetail: React.FC = () => {
+  const { id } = ReactRouterDOM.useParams<{ id: string }>();
+  const { content } = useContent();
+
+  const program = content.programs.find(p => p.id === id);
+
+  if (!program) {
+    return <ReactRouterDOM.Navigate to="/programs" replace />;
+  }
+
+  return (
+    <div className="section" style={{ background: 'var(--surface-primary)', paddingTop: '6rem' }}>
+      <div className="container">
+        <ReactRouterDOM.Link to="/programs" className="btn btn--ghost" style={{ marginBottom: 'var(--space-8)' }}>
+          <ArrowLeft size={16} /> All programmes
+        </ReactRouterDOM.Link>
+
+        <div className="features-head">
+          <div className="features-head__tag">{program.stats}</div>
+          <h1 style={{ fontSize: 'var(--text-5xl)', fontWeight: 700, color: '#fff', marginBottom: 'var(--space-6)' }}>
+            {program.title}
+          </h1>
+        </div>
+
+        <div style={{ maxWidth: '48rem', padding: 'var(--space-10)', background: 'var(--surface-elevated)', borderRadius: 'var(--radius-md)' }}>
+          <h2 style={{ fontSize: 'var(--text-xl)', fontWeight: 600, color: '#fff', marginBottom: 'var(--space-4)' }}>About this pillar</h2>
+          <p style={{ fontSize: 'var(--text-base)', color: 'rgba(255,255,255,0.72)', lineHeight: 1.8, whiteSpace: 'pre-wrap' }}>
+            {program.description}
+          </p>
+        </div>
+
+        <div style={{ marginTop: 'var(--space-12)', padding: 'var(--space-10)', background: 'var(--color-accent)', borderRadius: 'var(--radius-md)', textAlign: 'center' }}>
+          <h3 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, color: '#fff', marginBottom: 'var(--space-4)' }}>Support this pillar</h3>
+          <p style={{ color: 'rgba(255,255,255,0.85)', marginBottom: 'var(--space-6)', lineHeight: 1.7 }}>
+            Your contribution directly supports the {program.title} initiative. Help us reach more households in Kisii and Nyamira Counties.
+          </p>
+          <ReactRouterDOM.Link to="/get-involved" className="btn btn--light">
+            Support programme
+          </ReactRouterDOM.Link>
+        </div>
+      </div>
+    </div>
+  );
+};

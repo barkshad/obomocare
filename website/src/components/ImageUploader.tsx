@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Upload, Loader, Check, Film, Image as ImageIcon, AlertCircle } from 'lucide-react';
 import { uploadMedia, UploadResult } from '../services/mediaService';
-import { BRAND } from '../brand';
+import { BRAND } from '../config/brand';
 
 interface ImageUploaderProps {
   onUploadComplete: (result: UploadResult) => void;

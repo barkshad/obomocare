@@ -1,8 +1,8 @@
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 import { doc, onSnapshot, updateDoc, setDoc } from 'firebase/firestore';
-import { db } from '../firebase';
-import { DEFAULT_CONTENT, FIREBASE_CONFIG } from '../constants';
-import { SiteContent, ContentContextType, Program } from '../types';
+import { db } from '../config/firebase';
+import { DEFAULT_CONTENT, FIREBASE_CONFIG } from '../config/constants';
+import { SiteContent, ContentContextType, Program } from '../config/types';
 
 const ContentContext = createContext<ContentContextType | undefined>(undefined);
 

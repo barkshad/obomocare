@@ -8,8 +8,8 @@ import {
 } from 'lucide-react';
 import { ImageUploader } from '../components/ImageUploader';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
-import { Program, ChildProfile, Story, MediaItem, SiteContent } from '../types';
-import { BRAND } from '../brand';
+import { Program, ChildProfile, Story, MediaItem, SiteContent } from '../config/types';
+import { BRAND } from '../config/brand';
 
 const generateId = () => Math.random().toString(36).substr(2, 9);
 
