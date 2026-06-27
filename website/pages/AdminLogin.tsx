@@ -10,6 +10,16 @@ export const AdminLogin: React.FC = () => {
   const [isLoading, setIsLoading] = useState(false);
   const { login } = useAuth();
   const navigate = ReactRouterDOM.useNavigate();
+  const [showReset, setShowReset] = useState(false);
+
+  const handleReset = () => {
+    localStorage.removeItem('obomo_admin_password');
+    localStorage.removeItem('obomo_admin_auth');
+    setShowReset(true);
+    setError('');
+    setPassword('');
+    setTimeout(() => setShowReset(false), 4000);
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -67,9 +77,25 @@ export const AdminLogin: React.FC = () => {
           >
             {isLoading ? 'Verifying...' : 'Enter Dashboard'}
           </button>
+
+          {showReset && (
+            <div className="text-green-600 text-sm text-center bg-green-50 p-3 rounded-lg border border-green-200">
+              Password reset to <strong>12345678</strong>. Enter it above.
+            </div>
+          )}
+
+          <div className="text-center">
+            <button
+              type="button"
+              onClick={handleReset}
+              className="text-sm text-slate-400 hover:text-slate-600 underline underline-offset-2"
+            >
+              Forgot password? Reset to default
+            </button>
+          </div>
         </form>
         
-        <div className="mt-8 text-center">
+        <div className="mt-6 text-center">
           <button onClick={() => navigate('/')} className="text-slate-400 text-sm hover:text-slate-600">
             &larr; Return to Website
           </button>
